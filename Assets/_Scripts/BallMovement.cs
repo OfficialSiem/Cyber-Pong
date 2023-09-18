@@ -4,7 +4,7 @@ using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Ball : MonoBehaviour
+public class BallMovement : MonoBehaviour
 {
     [SerializeField]
     private float initalSpeed = 25.0f;
@@ -12,6 +12,15 @@ public class Ball : MonoBehaviour
     [SerializeField]
     private float absoluteMaxSpeed = Mathf.Infinity;
 
+    [SerializeField]
+    private float velocityX = 0.0f;
+
+    [SerializeField]
+    private float velocityZ = 0.0f;
+
+    [SerializeField]
+    [Range(0.2f, 0.99f)]
+    private float whatPercentageOfSpeedToTakeFromPaddle = 0.25f;
 
     private Rigidbody ballRigidBody;
 
@@ -34,10 +43,10 @@ public class Ball : MonoBehaviour
         //Random value chooses a float between 0 and 1, so we can use this as a coin!
 
         //Therefore flip a coin, change the direction of the ball from going left or right
-        float velocityX = Random.value < 0.5f ? -1.0f : 1.0f;
+        this.velocityX = Random.value < 0.5f ? -1.0f : 1.0f;
 
         //Then, flip another coin, change the direction if the ball is going up or down, we'll even give it a random velocity going up and down;
-        float velocityZ = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
+        this.velocityZ = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
 
         //Register this as the direction the ball should travel
         Vector3 direction = new Vector3(velocityX, 0 , velocityZ);
@@ -53,6 +62,23 @@ public class Ball : MonoBehaviour
 
     }
 
+    //When the ball gets deflected by the paddle
+    private void OnCollisionEnter(Collision collision)
+    {
+        //See if what was collided with was the player
+        PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+        if (playerMovement != null) {
+            
+            //If the player was moving
+            if(playerMovement.paddleSpeed != 0)
+            {
+                //add the players speed (which is only in the Z direction) to the ball!
+                velocityZ += playerMovement.paddleSpeed * whatPercentageOfSpeedToTakeFromPaddle;
+            }
+            
+        }
+    }
+
     private void FixedUpdate()
     {
         //follow the balls direction
@@ -61,6 +87,7 @@ public class Ball : MonoBehaviour
         //Get the current speed of the ball, if ball is at MaxSpeed then good- we'll use the speed
         currentSpeed = Mathf.Min(currentSpeed, absoluteMaxSpeed);
 
+        //Caculate the speed of the ball!
         ballRigidBody.velocity = currentDirection * currentSpeed;
 
     }

@@ -19,15 +19,16 @@ public class BounceOffSurfaces : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        Ball ball = collision.gameObject.GetComponent<Ball>();
 
+        //See if you collided with the ball
+        BallMovement ball = collision.gameObject.GetComponent<BallMovement>();
 
         //If you actual collided into the ball
         if (ball != null)
         {
             //Get the normal of the collision vector
             var whereTheCollisionIs = collision.GetContact(0);
+<<<<<<< Updated upstream
             this.puppyCat = whereTheCollisionIs.normal;
             Debug.DrawRay(whereTheCollisionIs.point, this.puppyCat * 10, Color.black, 10f);
 
@@ -35,10 +36,42 @@ public class BounceOffSurfaces : MonoBehaviour
 
 
             
+=======
+            this.collisionsNormalVector = whereTheCollisionIs.normal;
+
+            //Caculate the reflected path along the collision's normal
+            Vector3 reflectionVector = Vector3.Reflect(ball.currentDirection, this.collisionsNormalVector);
+
+            if (ball.currentDirection.x < -maximumComponentThreshold || ball.currentDirection.x > maximumComponentThreshold)
+            {
+
+                //if so randomly change X direction
+                Vector3 placeHolderVector = ChangeNormalUsingX(ball.currentDirection);
+                reflectionVector = Vector3.Reflect(placeHolderVector, this.collisionsNormalVector);
+                Debug.DrawRay(whereTheCollisionIs.point, reflectionVector * 10, Color.red, 20f);
+                Debug.Log("New Direction Vector Caculated");
+                //Then apply those changes
+
+            }
+            else if (ball.currentDirection.z < -maximumComponentThreshold || ball.currentDirection.z > maximumComponentThreshold)
+            {
+                Debug.Log("Changing Z normal");
+                //Or randomly change Z direction
+                Vector3 holdingNewVector = ChangeNormalUsingZ(ball.currentDirection);
+                reflectionVector = Vector3.Reflect(holdingNewVector, this.collisionsNormalVector);
+                Debug.DrawRay(whereTheCollisionIs.point, reflectionVector * 10, Color.blue, 20f);
+
+
+
+            }
+
+            //Adding Speed
+>>>>>>> Stashed changes
             switch (forceType)
             {
                 case CustomForceType.Additive:
                     ball.currentSpeed += howMuchSpeedTooAdd;
+                    //Check for PlayerMovement, then add a bit of the Paddle Velocity to Balls
                     break;
 
                 case CustomForceType.Mulitiplicative:
@@ -46,6 +79,7 @@ public class BounceOffSurfaces : MonoBehaviour
                     break;
             }
 
+<<<<<<< Updated upstream
 
             //Check if the ball hit something nearly straight on
             if (this.puppyCat.x < -0.94f || this.puppyCat.x > 0.94f)
@@ -67,15 +101,51 @@ public class BounceOffSurfaces : MonoBehaviour
             //Then apply those changes
             ball.ChangeBallDirection(this.puppyCat);
 
+=======
+            //Finally Change Direction
+            ball.ChangeBallDirection(reflectionVector);
+>>>>>>> Stashed changes
 
         }
-
-        //See if you collided into ANYTHING and grab its "ball" component
-
-
     }
 
+<<<<<<< Updated upstream
     private static Vector3 ChangeNormalUsingX(Vector3 anotherVector)
+=======
+
+    private Vector3 ChangeNormalUsingX(Vector3 anotherVector)
+    {
+        
+
+        //Is there some semblence of movement (meaning is Z greater than 0)
+        // If Z points down,give it a random z value going down
+        float zComponent = anotherVector.z < 0.0f ? -Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f) :
+            //Else give it a random z value thats pointing upward!
+            Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f);
+
+        Debug.Log($"New zComponent: {zComponent}");
+
+        // Calculate coresponding x component using Pythagoras c^2 = a^2 + b^2
+        float aSquaredXComponent = 1 - Mathf.Pow(zComponent, 2);
+
+        Debug.Log($"New aSquaredXComponent: {aSquaredXComponent}");
+
+        float xComponent = Mathf.Sqrt(aSquaredXComponent);
+
+        Debug.Log($"New xComponent: {xComponent}");
+
+
+        anotherVector.x = xComponent;
+        anotherVector.z = zComponent;
+
+        return anotherVector;
+    }
+    
+    
+    
+    
+    private Vector3 ChangeNormalUsingZ(Vector3 anotherVector)
+>>>>>>> Stashed changes
     {
         //Grab the components
         float xComponent = anotherVector.x;
@@ -94,9 +164,17 @@ public class BounceOffSurfaces : MonoBehaviour
             float aSquaredXComponent = 1 + Mathf.Pow(zComponent, 2);
             xComponent = Mathf.Sqrt(aSquaredXComponent);
 
+<<<<<<< Updated upstream
             //Then point X in the opposite direction!
             //xComponent = -xComponent;
         }
+=======
+        // Flip a coin for if the ball is going to go up or down
+        // If X points down,give it a random x value going backward
+        float xComponent = anotherVector.x < 0.0f ? -Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f) :
+            //Else give it a random x value thats pointing foward!
+            Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f);
+>>>>>>> Stashed changes
 
         //Do the same as the above for the opposite direction!
         else if (xComponent < -0.94f)
@@ -107,6 +185,7 @@ public class BounceOffSurfaces : MonoBehaviour
                 //Else give it a random z value thats pointing upward!
                 Random.Range(0.34f, 0.93f);
 
+<<<<<<< Updated upstream
             // Calculate coresponding x component using Pythagoras c^2 = a^2 + b^2
             float squaredXComponent = 1 + Mathf.Pow(zComponent, 2);
             xComponent = Mathf.Sqrt(squaredXComponent);
@@ -114,10 +193,12 @@ public class BounceOffSurfaces : MonoBehaviour
             //Then point X in the opposite direction!
             //xComponent = -xComponent;
         }
+=======
+>>>>>>> Stashed changes
 
         anotherVector.x = xComponent;
         anotherVector.z = zComponent;
-        Debug.Log($"X Changes Made: {anotherVector}");
+
         return anotherVector;
     }
 

@@ -726,8 +726,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29587ecd768a03347b3767e47a6af790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puppyCat: {x: 0, y: 0, z: 0}
+  collisionsNormalVector: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
+<<<<<<< Updated upstream
+=======
+  maximumComponentThreshold: 0.982
+  minimumComponentThreshold: 0
+>>>>>>> Stashed changes
   forceType: 0
 --- !u!136 &536709467
 CapsuleCollider:
@@ -944,8 +949,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29587ecd768a03347b3767e47a6af790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puppyCat: {x: 0, y: 0, z: 0}
+  collisionsNormalVector: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
+<<<<<<< Updated upstream
+=======
+  maximumComponentThreshold: 0.982
+  minimumComponentThreshold: 0
+>>>>>>> Stashed changes
   forceType: 0
 --- !u!136 &765175657
 CapsuleCollider:
@@ -1758,8 +1768,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29587ecd768a03347b3767e47a6af790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puppyCat: {x: 0, y: 0, z: 0}
+  collisionsNormalVector: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
+<<<<<<< Updated upstream
+=======
+  maximumComponentThreshold: 0.97
+  minimumComponentThreshold: 0
+>>>>>>> Stashed changes
   forceType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
