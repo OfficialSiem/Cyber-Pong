@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Paddle : MonoBehaviour
 {
-    //
+    int PlayerID = 1;
     public float paddleSpeed = 5.0f;
 
     protected Rigidbody paddlesRigidbody;

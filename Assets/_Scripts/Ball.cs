@@ -17,6 +17,8 @@ public class Ball : MonoBehaviour
 
     public float currentSpeed = 0f;
 
+    public Vector3 currentDirection = Vector3.zero;
+
     private void Awake()
     {
         ballRigidBody = GetComponent<Rigidbody>();
@@ -44,7 +46,6 @@ public class Ball : MonoBehaviour
         ballRigidBody.AddForce(direction * this.initalSpeed, ForceMode.Impulse);
 
         string s = direction.ToString();
-        Debug.Log($"Speed: {s}");
 
         //balls current speed is going to be registered
 
@@ -55,17 +56,18 @@ public class Ball : MonoBehaviour
     private void FixedUpdate()
     {
         //follow the balls direction
-        Vector3 direction = ballRigidBody.velocity.normalized;
+        currentDirection = ballRigidBody.velocity.normalized;
 
         //Get the current speed of the ball, if ball is at MaxSpeed then good- we'll use the speed
         currentSpeed = Mathf.Min(currentSpeed, absoluteMaxSpeed);
 
-        ballRigidBody.velocity = direction * currentSpeed;
+        ballRigidBody.velocity = currentDirection * currentSpeed;
 
     }
 
-    public void AddOutsideForce()
+    public void ChangeBallDirection(Vector3 anotherDirection)
     {
-
+        ballRigidBody.velocity = anotherDirection * currentSpeed;
     }
+
 }
