@@ -67,7 +67,9 @@ public class Ball : MonoBehaviour
 
     public void ChangeBallDirection(Vector3 anotherDirection)
     {
-        ballRigidBody.velocity = anotherDirection * currentSpeed;
+        currentDirection = anotherDirection;
+        ballRigidBody.velocity = currentDirection * currentSpeed;
+        Debug.Log("Ball Changed Successfully!");
     }
 
 }

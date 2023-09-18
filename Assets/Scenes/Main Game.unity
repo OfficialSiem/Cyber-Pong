@@ -728,6 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puppyCat: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
+  maximumComponentThreshold: 0.982
   forceType: 0
 --- !u!136 &536709467
 CapsuleCollider:
@@ -946,6 +947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puppyCat: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
+  maximumComponentThreshold: 0.982
   forceType: 0
 --- !u!136 &765175657
 CapsuleCollider:
@@ -1068,12 +1070,16 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d7b27700b0f660845896d78b703c7adf,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7b27700b0f660845896d78b703c7adf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 769531427}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7b27700b0f660845896d78b703c7adf,
         type: 3}
       insertIndex: -1
@@ -1159,11 +1165,32 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2122681682525997855, guid: d7b27700b0f660845896d78b703c7adf, type: 3}
+--- !u!135 &769531427
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769531419}
+  m_Material: {fileID: 13400000, guid: 7625c1806958e5f4a9219420f6ed6970, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &820707403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,6 +1787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puppyCat: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
+  maximumComponentThreshold: 0.982
   forceType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

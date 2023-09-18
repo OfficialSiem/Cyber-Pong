@@ -5,9 +5,24 @@ using UnityEngine;
 public class BounceOffSurfaces : MonoBehaviour
 {
     
-    public Vector3 puppyCat = Vector3.zero;
+    public Vector3 collisionsNormalVector = Vector3.zero;
 
     public float howMuchSpeedTooAdd = 0.5f;
+
+    [Range(0.191f, 0.982f)]
+    public float maximumComponentThreshold = 0.97f;
+
+    public float minimumComponentThreshold = 0.0f;
+
+    public void Awake()
+    {
+        //Calculate the minimum distance we can use before triggering this sequence
+        // Calculate coresponding x component using Pythagoras c^2 - b^2 = a^2
+        float minmumComponenntThresholdSquared = 1 - Mathf.Pow(maximumComponentThreshold, 2);
+        Debug.Log($"New minmumComponenntThresholdSquared: {minmumComponenntThresholdSquared}");
+
+        minimumComponentThreshold = Mathf.Sqrt(minmumComponenntThresholdSquared);
+    }
 
     public enum CustomForceType
     {
@@ -28,13 +43,14 @@ public class BounceOffSurfaces : MonoBehaviour
         {
             //Get the normal of the collision vector
             var whereTheCollisionIs = collision.GetContact(0);
-            this.puppyCat = whereTheCollisionIs.normal;
-            Debug.DrawRay(whereTheCollisionIs.point, this.puppyCat * 10, Color.black, 10f);
+            this.collisionsNormalVector = whereTheCollisionIs.normal;
+           
+            Debug.DrawRay(whereTheCollisionIs.point, this.collisionsNormalVector * 10, Color.black, 10f);
 
-            Debug.Log("Colliding at " + this.puppyCat.ToString());
+            Debug.Log("Colliding at " + this.collisionsNormalVector.ToString());
 
-
-            
+            Vector3 holdingNewVector = Vector3.zero;
+                   
             switch (forceType)
             {
                 case CustomForceType.Additive:
@@ -46,26 +62,31 @@ public class BounceOffSurfaces : MonoBehaviour
                     break;
             }
 
-
+            Debug.DrawRay(whereTheCollisionIs.point, -ball.currentDirection * 10, Color.magenta, 10f);
+            Debug.DrawRay(whereTheCollisionIs.point, ball.currentDirection * 10, Color.green, 10f);
             //Check if the ball hit something nearly straight on
-            if (this.puppyCat.x < -0.94f || this.puppyCat.x > 0.94f)
+            if (ball.currentDirection.x < -maximumComponentThreshold || ball.currentDirection.x > maximumComponentThreshold)
             {
                 Debug.Log("Changing X normal");
                 //if so randomly change X direction
-                this.puppyCat = ChangeNormalUsingX(this.puppyCat);
-                Debug.DrawRay(whereTheCollisionIs.point, this.puppyCat * 10, Color.red, 20f);
+                holdingNewVector = ChangeNormalUsingX(ball.currentDirection);
+                Debug.DrawRay(whereTheCollisionIs.point, holdingNewVector * 10, Color.red, 20f);
+                Debug.Log("New Direction Vector Caculated");
+                //Then apply those changes
+                ball.ChangeBallDirection(holdingNewVector);
             }
-            else if (this.puppyCat.z < -0.94f || this.puppyCat.z > 0.94f)
+            else if (ball.currentDirection.z < -maximumComponentThreshold || ball.currentDirection.z > maximumComponentThreshold)
             {
                 Debug.Log("Changing Z normal");
                 //Or randomly change Z direction
-                this.puppyCat = ChangeNormalUsingZ(this.puppyCat);
-                Debug.DrawRay(whereTheCollisionIs.point, this.puppyCat * 10, Color.blue, 20f);
+                holdingNewVector = ChangeNormalUsingZ(ball.currentDirection);
+                Debug.DrawRay(whereTheCollisionIs.point, holdingNewVector * 10, Color.blue, 20f);
+                Debug.Log("New Direction Vector Caculated");
+                //Then apply those changes
+                ball.ChangeBallDirection(holdingNewVector);
             }
 
-            Debug.Log("Attempting To Apply Changes");
-            //Then apply those changes
-            ball.ChangeBallDirection(this.puppyCat);
+
 
 
         }
@@ -75,98 +96,66 @@ public class BounceOffSurfaces : MonoBehaviour
 
     }
 
-    private static Vector3 ChangeNormalUsingX(Vector3 anotherVector)
+    
+    private Vector3 ChangeNormalUsingX(Vector3 anotherVector)
     {
-        //Grab the components
-        float xComponent = anotherVector.x;
-        float zComponent = anotherVector.z;
-        
-        //If X is basically hitting near dead center
-        if (xComponent > 0.94f)
-        {
-            // Flip a coin for if the ball is going to go up or down
-            // If Z points down,give it a random z value going down
-            zComponent = Random.value < 0.5f ? -Random.Range(0.34f, 0.93f) :
-                //Else give it a random z value thats pointing upward!
-                Random.Range(0.34f, 0.93f);
 
-            // Calculate coresponding x component using Pythagoras c^2 = a^2 + b^2
-            float aSquaredXComponent = 1 + Mathf.Pow(zComponent, 2);
-            xComponent = Mathf.Sqrt(aSquaredXComponent);
+        Debug.Log($"New minmumComponenntThreshold: {minimumComponentThreshold}");
 
-            //Then point X in the opposite direction!
-            //xComponent = -xComponent;
-        }
+        // Flip a coin for if the ball is going to go up or down
+        // If Z points down,give it a random z value going down
+        float zComponent = Random.value < 0.5f ? -Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f) :
+            //Else give it a random z value thats pointing upward!
+            Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f);
 
-        //Do the same as the above for the opposite direction!
-        else if (xComponent < -0.94f)
-        {
-            // Flip a coin for if the ball is going to go up or down
-            // If Z points down,give it a random z value going down
-            zComponent = Random.value < 0.5f ? -Random.Range(0.34f, 0.93f) :
-                //Else give it a random z value thats pointing upward!
-                Random.Range(0.34f, 0.93f);
+        Debug.Log($"New zComponent: {zComponent}");
 
-            // Calculate coresponding x component using Pythagoras c^2 = a^2 + b^2
-            float squaredXComponent = 1 + Mathf.Pow(zComponent, 2);
-            xComponent = Mathf.Sqrt(squaredXComponent);
+        // Calculate coresponding x component using Pythagoras c^2 = a^2 + b^2
+        float aSquaredXComponent = 1 - Mathf.Pow(zComponent, 2);
 
-            //Then point X in the opposite direction!
-            //xComponent = -xComponent;
-        }
+        Debug.Log($"New aSquaredXComponent: {aSquaredXComponent}");
+
+        float xComponent = Mathf.Sqrt(aSquaredXComponent);
+
+        Debug.Log($"New xComponent: {xComponent}");
+
+        //Then point X in the opposite direction!
+        xComponent = -xComponent;
 
         anotherVector.x = xComponent;
         anotherVector.z = zComponent;
         Debug.Log($"X Changes Made: {anotherVector}");
         return anotherVector;
     }
-
-    private static Vector3 ChangeNormalUsingZ(Vector3 anotherVector)
+    
+    
+    
+    
+    private Vector3 ChangeNormalUsingZ(Vector3 anotherVector)
     {
         //Grab the components
-        float xComponent = anotherVector.x;
         float zComponent = anotherVector.z;
 
-        //If Z is basically hitting near dead center
-        if (zComponent > 0.94f)
-        {
-            // Flip a coin for if the ball is going to go up or down
-            // If X points left,give it a random x value going left
-            xComponent = Random.value < 0.5f ? -Random.Range(0.34f, 0.93f) :
-                //Else give it a random x value thats pointing right!
-                Random.Range(0.34f, 0.93f);
 
-            // Calculate coresponding z component using Pythagoras c^2 = a^2 + b^2
-            float squaredZComponent = 1 + Mathf.Pow(zComponent, 2);
-            zComponent = Mathf.Sqrt(squaredZComponent);
+        // Flip a coin for if the ball is going to go up or down
+        // If X points down,give it a random x value going backward
+        float xComponent = Random.value < 0.5f ? -Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f) :
+            //Else give it a random x value thats pointing foward!
+            Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f);
 
-            //Then point Z in the opposite direction!
-            zComponent = -zComponent;
-        }
+        // Calculate coresponding z component using Pythagoras c^2 = a^2 + b^2
+        float aSquaredXComponent = 1 - Mathf.Pow(zComponent, 2);
+        zComponent = Mathf.Sqrt(aSquaredXComponent);
 
-        //Do the same as the above for the opposite direction!
-        else if (zComponent < -0.94f)
-        {
-            // Flip a coin for if the ball is going to go up or down
-            // If X points left,give it a random x value going left
-            xComponent = Random.value < 0.5f ? -Random.Range(0.34f, 0.93f) :
-                //Else give it a random x value thats pointing right!
-                Random.Range(0.34f, 0.93f);
-
-            // Calculate coresponding z component using Pythagoras c^2 = a^2 + b^2
-            float squaredZComponent = 1 + Mathf.Pow(zComponent, 2);
-            zComponent = Mathf.Sqrt(squaredZComponent);
-
-            //Then point Z in the opposite direction!
-            zComponent = -zComponent;
-        }
+        //Then point z in the opposite direction!
+        zComponent = -zComponent;
 
         anotherVector.x = xComponent;
         anotherVector.z = zComponent;
         Debug.Log($"X Changes Made: {anotherVector}");
         return anotherVector;
     }
-
+    
 
 
   
