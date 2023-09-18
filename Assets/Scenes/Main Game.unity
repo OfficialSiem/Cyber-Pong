@@ -214,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6e45a5745aa6be14a84ff6e60b7f0f54,
         type: 3}
       propertyPath: m_Name
-      value: paddle_blue
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 5429202170342594379, guid: 6e45a5745aa6be14a84ff6e60b7f0f54,
         type: 3}
@@ -686,7 +686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb913a2bf62e70b46b86af49cd694df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpeed: 49
+  paddleSpeed: 9
+  playerNumber: 1
 --- !u!54 &536709465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -728,11 +729,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionsNormalVector: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
-<<<<<<< Updated upstream
-=======
-  maximumComponentThreshold: 0.982
+  maximumComponentThreshold: 0.97
   minimumComponentThreshold: 0
->>>>>>> Stashed changes
   forceType: 0
 --- !u!136 &536709467
 CapsuleCollider:
@@ -886,7 +884,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c519091ef09852b46a4cff3279607bd2,
         type: 3}
       propertyPath: m_Name
-      value: paddle_green
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 5429202170342594379, guid: c519091ef09852b46a4cff3279607bd2,
         type: 3}
@@ -915,11 +913,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c519091ef09852b46a4cff3279607bd2,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 765175657}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c519091ef09852b46a4cff3279607bd2,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 765175658}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c519091ef09852b46a4cff3279607bd2,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 765175657}
+      addedObject: {fileID: 765175659}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c519091ef09852b46a4cff3279607bd2,
         type: 3}
       insertIndex: -1
@@ -951,11 +953,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionsNormalVector: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
-<<<<<<< Updated upstream
-=======
-  maximumComponentThreshold: 0.982
+  maximumComponentThreshold: 0.97
   minimumComponentThreshold: 0
->>>>>>> Stashed changes
   forceType: 0
 --- !u!136 &765175657
 CapsuleCollider:
@@ -1007,6 +1006,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 118
   m_CollisionDetection: 1
+--- !u!114 &765175659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765175654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb913a2bf62e70b46b86af49cd694df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddleSpeed: 9
+  playerNumber: 2
 --- !u!1001 &769531417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1150,6 +1163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initalSpeed: 15
   absoluteMaxSpeed: 200
+  velocityX: 0
+  velocityZ: 0
+  whatPercentageOfSpeedToTakeFromPaddle: 0.25
   currentSpeed: 0
   currentDirection: {x: 0, y: 0, z: 0}
 --- !u!64 &769531424
@@ -1770,11 +1786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionsNormalVector: {x: 0, y: 0, z: 0}
   howMuchSpeedTooAdd: 0.5
-<<<<<<< Updated upstream
-=======
   maximumComponentThreshold: 0.97
   minimumComponentThreshold: 0
->>>>>>> Stashed changes
   forceType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
