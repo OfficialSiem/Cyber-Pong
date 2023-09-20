@@ -3,7 +3,17 @@ guid: 6e45a5745aa6be14a84ff6e60b7f0f54
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EndCaps
+    second: {fileID: 2100000, guid: 57a98b3c65e048e4f833cf36c2a69d1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paddle-Purple
+    second: {fileID: 2100000, guid: 87ef09a89cf7b7b41b47b856e89948ca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

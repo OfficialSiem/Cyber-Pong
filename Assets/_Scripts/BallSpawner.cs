@@ -7,6 +7,10 @@ public class BallSpawner : MonoBehaviour
     [SerializeField]
     private GameObject CloneWhichBall;
 
+    [SerializeField]
+    private GameObject parent;
+
+
     private GameObject ball;
 
     void Awake()
@@ -14,7 +18,7 @@ public class BallSpawner : MonoBehaviour
         if(CloneWhichBall != null)
         {
             //Spawner is going to be in the middle of the field, so spawn the ball exactly their!
-            ball = Instantiate(CloneWhichBall, this.transform, false);
+            ball = Instantiate(CloneWhichBall, parent.transform, false);
             ball.transform.rotation = Quaternion.identity;
             ball.SetActive(true);
         }

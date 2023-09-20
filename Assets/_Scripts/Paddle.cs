@@ -10,7 +10,7 @@ public class Paddle : MonoBehaviour
 
     protected Rigidbody paddlesRigidbody;
 
-    private void Awake()
+    protected void Awake()
     {
         paddlesRigidbody = GetComponent<Rigidbody>();
     }
