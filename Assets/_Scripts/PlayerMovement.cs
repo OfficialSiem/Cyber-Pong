@@ -19,41 +19,51 @@ public class PlayerMovement : Paddle
     private new void Awake()
     {
         base.Awake();
-        _playerInput = GetComponent<PlayerInput>();
+        //_playerInput = GetComponent<PlayerInput>();
         _playerInputActions = new PlayerInputActions();
     }
 
     private void Start()
     {
-        
         GetHorizontalMovement();
     }
 
     private void Update()
     {
+        //If theres an action to be called
         if (_inputAction != null)
         {
-            ReadHorizontalMovement();
+            //and the value being read is non-zero
+            if(_inputAction.ReadValue<float>() != 0.0f)
+            {
+                ReadHorizontalMovement();
+            }
+            
         }
     }
 
     private void FixedUpdate()
     {
+        //If theres an action to be called
         if (_inputAction != null)
         {
-            MovePaddle();
+            //and the value being read is non-zero
+            if (_inputAction.ReadValue<float>() != 0.0f)
+            {
+                MovePaddle();
+            }
         }
     }
 
     private void OnEnable()
     {
-        //Enable all the action maps
+        //Enable Player Action map
         _playerInputActions.Player.Enable();
     }
 
     private void OnDisable()
     {
-        //Disable all the action maps
+        //Disable Player Action map
         _playerInputActions.Player.Disable();
     }
 
@@ -89,9 +99,7 @@ public class PlayerMovement : Paddle
 
     public void ReadHorizontalMovement()
     {
-        Debug.Log("Before Reading Movement = "+_inputAction.ToString());
         _horizontal = _inputAction.ReadValue<float>() * paddleSpeed;
-        Debug.Log("After Reading Movement = " + _horizontal);
     }
 
     void MovePaddle()
