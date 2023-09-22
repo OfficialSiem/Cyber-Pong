@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class TrackingEveryInput : MonoBehaviour
 {
@@ -95,8 +96,9 @@ public class TrackingEveryInput : MonoBehaviour
                     if(Touchscreen.current != null)
                     {
                         /*
-                        var touch = context.ReadValueAsObject();
-                        //var touch = Touchscreen.current.touches[0].position;
+                        _playerInputActions.
+                        var touchZero = Touchscreen.current.touches[0]
+                        var touchOne = Touchscreen.current.touches[1]
                         
                         if (touchFi) {
                             var touch = Touchscreen.current.touches[0].position;

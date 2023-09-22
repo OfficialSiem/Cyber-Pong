@@ -19,7 +19,7 @@ public class BounceOffSurfaces : MonoBehaviour
         //Calculate the minimum distance we can use before triggering this sequence
         // Calculate coresponding x component using Pythagoras c^2 - b^2 = a^2
         float minmumComponenntThresholdSquared = 1 - Mathf.Pow(maximumComponentThreshold, 2);
-        Debug.Log($"New minmumComponenntThresholdSquared: {minmumComponenntThresholdSquared}");
+        //Debug.Log($"New minmumComponenntThresholdSquared: {minmumComponenntThresholdSquared}");
 
         minimumComponentThreshold = Mathf.Sqrt(minmumComponenntThresholdSquared);
     }
@@ -55,7 +55,7 @@ public class BounceOffSurfaces : MonoBehaviour
                 Vector3 placeHolderVector = ChangeNormalUsingX(ball.currentDirection);
                 reflectionVector = Vector3.Reflect(placeHolderVector, this.collisionsNormalVector);
                 Debug.DrawRay(whereTheCollisionIs.point, reflectionVector * 10, Color.red, 20f);
-                Debug.Log("New Direction Vector Caculated");
+                //Debug.Log("New Direction Vector Caculated");
                 //Then apply those changes
 
             }
@@ -101,16 +101,16 @@ public class BounceOffSurfaces : MonoBehaviour
             //Else give it a random z value thats pointing upward!
             Random.Range(minimumComponentThreshold + 0.01f, maximumComponentThreshold - 0.01f);
 
-        Debug.Log($"New zComponent: {zComponent}");
+        //Debug.Log($"New zComponent: {zComponent}");
 
         // Calculate coresponding x component using Pythagoras c^2 = a^2 + b^2
         float aSquaredXComponent = 1 - Mathf.Pow(zComponent, 2);
 
-        Debug.Log($"New aSquaredXComponent: {aSquaredXComponent}");
+        //Debug.Log($"New aSquaredXComponent: {aSquaredXComponent}");
 
         float xComponent = Mathf.Sqrt(aSquaredXComponent);
 
-        Debug.Log($"New xComponent: {xComponent}");
+        //Debug.Log($"New xComponent: {xComponent}");
 
 
         anotherVector.x = xComponent;

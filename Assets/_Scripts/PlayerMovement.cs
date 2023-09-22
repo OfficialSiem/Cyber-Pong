@@ -83,11 +83,11 @@ public class PlayerMovement : Paddle
             {
                 case 1:
                     _inputAction = _playerInputActions.Player.Player1;
-                    Debug.Log(_inputAction.ToString());
+                    //Debug.Log(_inputAction.ToString());
                     break;
                 case 2:
                     _inputAction = _playerInputActions.Player.Player2;
-                    Debug.Log(_inputAction.ToString());
+                    //Debug.Log(_inputAction.ToString());
                     break;  
             }
 
