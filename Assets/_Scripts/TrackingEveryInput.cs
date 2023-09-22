@@ -54,34 +54,59 @@ public class TrackingEveryInput : MonoBehaviour
                 if(context.performed)
                 {
                     //Check which keyboard button was pressed!
-                    #region Keyboard
-                    if (Keyboard.current.aKey.wasPressedThisFrame)
+                    
+                    if (Keyboard.current != null)
                     {
-                        File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                            $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard A Key" + System.Environment.NewLine);
+                        #region Keyboard Presses
+                        if (Keyboard.current.aKey.wasPressedThisFrame)
+                        {
+                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
+                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard A Key" + System.Environment.NewLine);
+                        }
+
+                        //if s
+                        if (Keyboard.current.sKey.wasPressedThisFrame)
+                        {
+                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
+                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard S Key" + System.Environment.NewLine);
+                        }
+
+                        //if k
+                        if (Keyboard.current.kKey.wasPressedThisFrame)
+                        {
+                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
+                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard K Key" + System.Environment.NewLine);
+                        }
+
+                        //if l
+                        if (Keyboard.current.lKey.wasPressedThisFrame)
+                        {
+                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
+                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard L Key" + System.Environment.NewLine);
+                        }
+                        #endregion
+                    }
+                    
+                    if(Gamepad.current != null)
+                    {
+
                     }
 
-                    //if s
-                    if (Keyboard.current.sKey.wasPressedThisFrame)
+                    if(Touchscreen.current != null)
                     {
-                        File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                            $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard S Key" + System.Environment.NewLine);
-                    }
+                        /*
+                        var touch = context.ReadValueAsObject();
+                        //var touch = Touchscreen.current.touches[0].position;
+                        
+                        if (touchFi) {
+                            var touch = Touchscreen.current.touches[0].position;
+                            var inWorldPosition = Camera.main.ScreenToWorldPoint(touch);
+                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
+                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Touch Pressed At Pixel Coordinate:{touch}" + System.Environment.NewLine);
+                        }*/
 
-                    //if k
-                    if (Keyboard.current.kKey.wasPressedThisFrame)
-                    {
-                        File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                            $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard K Key" + System.Environment.NewLine);
-                    }
 
-                    //if l
-                    if (Keyboard.current.lKey.wasPressedThisFrame)
-                    {
-                        File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                            $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard L Key" + System.Environment.NewLine);
                     }
-                    #endregion
 
 
                 }
