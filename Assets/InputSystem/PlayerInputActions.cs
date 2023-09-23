@@ -115,39 +115,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""1D Axis"",
-                    ""id"": ""0eeaaf2b-96b5-4d3d-92c0-43a0d9c11178"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Player1"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""95d63dd4-d919-46ce-a74e-c0054b10d488"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touchscreen"",
-                    ""action"": ""Player1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""d25a6020-cc69-4ea2-a64f-fbff3192c5be"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touchscreen"",
-                    ""action"": ""Player1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
                     ""id"": ""8285cdda-a704-487c-b013-758ad2dcf1f8"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -208,39 +175,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Player2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""cd8906d8-0862-4c57-a738-6b70c8554909"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Player2"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""3876ba2c-3efe-4023-b8dc-b117b491d6a1"",
-                    ""path"": ""<Touchscreen>/touch1/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touchscreen"",
-                    ""action"": ""Player2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""de493d5c-57ad-4fac-a970-cb6a07b6e0bb"",
-                    ""path"": ""<Touchscreen>/touch1/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touchscreen"",
                     ""action"": ""Player2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -762,122 +696,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""TouchControlTest"",
-            ""id"": ""455c402e-64fd-495b-a3a2-eada7788e18e"",
-            ""actions"": [
-                {
-                    ""name"": ""TouchInput"",
-                    ""type"": ""Button"",
-                    ""id"": ""d7841a1c-3112-4c8a-8d39-e9cbe8ab9b7e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TouchPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""3ec4dd6f-98a4-471d-a32d-46c7b5dbf92b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)"",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TouchPosition"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""52c46d9e-3120-4133-9e8e-171901a0a7ca"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""38806533-47fd-46f8-8dde-757f4ff7062b"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TouchInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6596b65c-e5dc-439d-99ff-2aeb58a3ae7e"",
-                    ""path"": ""<Touchscreen>/primaryTouch/press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TouchPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""42252222-371e-42f8-8597-b7c2a99b9abd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TouchPosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""SwipeControlTest"",
-            ""id"": ""86dbfeb6-d9ff-4ce7-91fa-bea47fe0a1c3"",
-            ""actions"": [
-                {
-                    ""name"": ""PrimaryContact "",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""032ec511-81a1-43d7-99bb-2aa07288d28a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press"",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""PrimaryPosition"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""8707ef8a-4f04-425c-bdbf-df7c7e3d1839"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""b25829e7-4672-4cad-8f6c-7a2b9339bbcf"",
-                    ""path"": ""<Touchscreen>/primaryTouch/press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PrimaryContact "",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4e069466-28f1-4e75-a9fb-0f3bd0890efe"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PrimaryPosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
@@ -937,15 +755,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        // TouchControlTest
-        m_TouchControlTest = asset.FindActionMap("TouchControlTest", throwIfNotFound: true);
-        m_TouchControlTest_TouchInput = m_TouchControlTest.FindAction("TouchInput", throwIfNotFound: true);
-        m_TouchControlTest_TouchPress = m_TouchControlTest.FindAction("TouchPress", throwIfNotFound: true);
-        m_TouchControlTest_TouchPosition = m_TouchControlTest.FindAction("TouchPosition", throwIfNotFound: true);
-        // SwipeControlTest
-        m_SwipeControlTest = asset.FindActionMap("SwipeControlTest", throwIfNotFound: true);
-        m_SwipeControlTest_PrimaryContact = m_SwipeControlTest.FindAction("PrimaryContact ", throwIfNotFound: true);
-        m_SwipeControlTest_PrimaryPosition = m_SwipeControlTest.FindAction("PrimaryPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1175,122 +984,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
-
-    // TouchControlTest
-    private readonly InputActionMap m_TouchControlTest;
-    private List<ITouchControlTestActions> m_TouchControlTestActionsCallbackInterfaces = new List<ITouchControlTestActions>();
-    private readonly InputAction m_TouchControlTest_TouchInput;
-    private readonly InputAction m_TouchControlTest_TouchPress;
-    private readonly InputAction m_TouchControlTest_TouchPosition;
-    public struct TouchControlTestActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public TouchControlTestActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @TouchInput => m_Wrapper.m_TouchControlTest_TouchInput;
-        public InputAction @TouchPress => m_Wrapper.m_TouchControlTest_TouchPress;
-        public InputAction @TouchPosition => m_Wrapper.m_TouchControlTest_TouchPosition;
-        public InputActionMap Get() { return m_Wrapper.m_TouchControlTest; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(TouchControlTestActions set) { return set.Get(); }
-        public void AddCallbacks(ITouchControlTestActions instance)
-        {
-            if (instance == null || m_Wrapper.m_TouchControlTestActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_TouchControlTestActionsCallbackInterfaces.Add(instance);
-            @TouchInput.started += instance.OnTouchInput;
-            @TouchInput.performed += instance.OnTouchInput;
-            @TouchInput.canceled += instance.OnTouchInput;
-            @TouchPress.started += instance.OnTouchPress;
-            @TouchPress.performed += instance.OnTouchPress;
-            @TouchPress.canceled += instance.OnTouchPress;
-            @TouchPosition.started += instance.OnTouchPosition;
-            @TouchPosition.performed += instance.OnTouchPosition;
-            @TouchPosition.canceled += instance.OnTouchPosition;
-        }
-
-        private void UnregisterCallbacks(ITouchControlTestActions instance)
-        {
-            @TouchInput.started -= instance.OnTouchInput;
-            @TouchInput.performed -= instance.OnTouchInput;
-            @TouchInput.canceled -= instance.OnTouchInput;
-            @TouchPress.started -= instance.OnTouchPress;
-            @TouchPress.performed -= instance.OnTouchPress;
-            @TouchPress.canceled -= instance.OnTouchPress;
-            @TouchPosition.started -= instance.OnTouchPosition;
-            @TouchPosition.performed -= instance.OnTouchPosition;
-            @TouchPosition.canceled -= instance.OnTouchPosition;
-        }
-
-        public void RemoveCallbacks(ITouchControlTestActions instance)
-        {
-            if (m_Wrapper.m_TouchControlTestActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(ITouchControlTestActions instance)
-        {
-            foreach (var item in m_Wrapper.m_TouchControlTestActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_TouchControlTestActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public TouchControlTestActions @TouchControlTest => new TouchControlTestActions(this);
-
-    // SwipeControlTest
-    private readonly InputActionMap m_SwipeControlTest;
-    private List<ISwipeControlTestActions> m_SwipeControlTestActionsCallbackInterfaces = new List<ISwipeControlTestActions>();
-    private readonly InputAction m_SwipeControlTest_PrimaryContact;
-    private readonly InputAction m_SwipeControlTest_PrimaryPosition;
-    public struct SwipeControlTestActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public SwipeControlTestActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @PrimaryContact => m_Wrapper.m_SwipeControlTest_PrimaryContact;
-        public InputAction @PrimaryPosition => m_Wrapper.m_SwipeControlTest_PrimaryPosition;
-        public InputActionMap Get() { return m_Wrapper.m_SwipeControlTest; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(SwipeControlTestActions set) { return set.Get(); }
-        public void AddCallbacks(ISwipeControlTestActions instance)
-        {
-            if (instance == null || m_Wrapper.m_SwipeControlTestActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_SwipeControlTestActionsCallbackInterfaces.Add(instance);
-            @PrimaryContact.started += instance.OnPrimaryContact;
-            @PrimaryContact.performed += instance.OnPrimaryContact;
-            @PrimaryContact.canceled += instance.OnPrimaryContact;
-            @PrimaryPosition.started += instance.OnPrimaryPosition;
-            @PrimaryPosition.performed += instance.OnPrimaryPosition;
-            @PrimaryPosition.canceled += instance.OnPrimaryPosition;
-        }
-
-        private void UnregisterCallbacks(ISwipeControlTestActions instance)
-        {
-            @PrimaryContact.started -= instance.OnPrimaryContact;
-            @PrimaryContact.performed -= instance.OnPrimaryContact;
-            @PrimaryContact.canceled -= instance.OnPrimaryContact;
-            @PrimaryPosition.started -= instance.OnPrimaryPosition;
-            @PrimaryPosition.performed -= instance.OnPrimaryPosition;
-            @PrimaryPosition.canceled -= instance.OnPrimaryPosition;
-        }
-
-        public void RemoveCallbacks(ISwipeControlTestActions instance)
-        {
-            if (m_Wrapper.m_SwipeControlTestActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(ISwipeControlTestActions instance)
-        {
-            foreach (var item in m_Wrapper.m_SwipeControlTestActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_SwipeControlTestActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public SwipeControlTestActions @SwipeControlTest => new SwipeControlTestActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1335,16 +1028,5 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
-    }
-    public interface ITouchControlTestActions
-    {
-        void OnTouchInput(InputAction.CallbackContext context);
-        void OnTouchPress(InputAction.CallbackContext context);
-        void OnTouchPosition(InputAction.CallbackContext context);
-    }
-    public interface ISwipeControlTestActions
-    {
-        void OnPrimaryContact(InputAction.CallbackContext context);
-        void OnPrimaryPosition(InputAction.CallbackContext context);
     }
 }

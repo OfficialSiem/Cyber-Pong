@@ -438,7 +438,7 @@ MonoBehaviour:
     m_ActionId: 626cd794-8e5d-4c23-96e3-808ef5370220
     m_ActionName: Player-InMatch/PaddleMovementUp[/Keyboard/s,/Keyboard/a,/Keyboard/l,/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -1618,6 +1618,174 @@ PrefabInstance:
       propertyPath: m_Name
       value: Input Tracker
       objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: bd99aab5-cccd-4fcb-ba3f-0e4d89a3fe94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 845f0d93-5481-430e-802f-2ef27a519017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 8b0f21b7-1d9c-42b7-9dd0-d59d958e7085
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: f736e150-2241-450b-a69e-757e5831e73e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 3d9deea3-80b2-4ade-aef4-022e80e6ac86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: e9198ee4-3f17-447f-b634-df47d6b0a789
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: 90cabea1-924a-4f07-89c9-6a6a7e8d1589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: d5adf6ff-ec9f-4cce-b7f5-2031652952f2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: 6352de0d-3232-45eb-ba31-551a8d8f6e46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: 8657d1b7-28df-403f-bea1-160f5e43e20a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: d7841a1c-3112-4c8a-8d39-e9cbe8ab9b7e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 3ec4dd6f-98a4-471d-a32d-46c7b5dbf92b
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: 52c46d9e-3120-4133-9e8e-171901a0a7ca
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 032ec511-81a1-43d7-99bb-2aa07288d28a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: 8707ef8a-4f04-425c-bdbf-df7c7e3d1839
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: UI/Point[/Mouse/position,/Simulated Touchscreen/touch0/position,/Simulated
+        Touchscreen/touch1/position,/Simulated Touchscreen/touch2/position,/Simulated
+        Touchscreen/touch3/position,/Simulated Touchscreen/touch4/position,/Simulated
+        Touchscreen/touch5/position,/Simulated Touchscreen/touch6/position,/Simulated
+        Touchscreen/touch7/position,/Simulated Touchscreen/touch8/position,/Simulated
+        Touchscreen/touch9/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: UI/Click[/Mouse/leftButton,/Simulated Touchscreen/touch0/press,/Simulated
+        Touchscreen/touch1/press,/Simulated Touchscreen/touch2/press,/Simulated Touchscreen/touch3/press,/Simulated
+        Touchscreen/touch4/press,/Simulated Touchscreen/touch5/press,/Simulated Touchscreen/touch6/press,/Simulated
+        Touchscreen/touch7/press,/Simulated Touchscreen/touch8/press,/Simulated Touchscreen/touch9/press]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: UI/ScrollWheel[/Mouse/scroll]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: UI/MiddleClick[/Mouse/middleButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: UI/RightClick[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: UI/TrackedDevicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: UI/TrackedDeviceOrientation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: TouchControlTest/TouchInput[/Simulated Touchscreen/primaryTouch/tap]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: TouchControlTest/TouchPress[/Simulated Touchscreen/primaryTouch/press]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: TouchControlTest/TouchPosition[/Simulated Touchscreen/primaryTouch/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: SwipeControlTest/PrimaryContact [/Simulated Touchscreen/primaryTouch/press]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: SwipeControlTest/PrimaryPosition[/Simulated Touchscreen/primaryTouch/position]
+      objectReference: {fileID: 0}
     - target: {fileID: 7392590209161764896, guid: ccb9dc39b02834d46923d4e6dd06d843,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1668,7 +1836,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6568217713758707926, guid: ccb9dc39b02834d46923d4e6dd06d843, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1988,7 +2157,7 @@ MonoBehaviour:
     m_ActionId: 626cd794-8e5d-4c23-96e3-808ef5370220
     m_ActionName: Player-InMatch/PaddleMovementUp[/Keyboard/s,/Keyboard/a,/Keyboard/l,/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

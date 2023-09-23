@@ -2,13 +2,24 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerMovement : Paddle
+public class PlayerMovement : MonoBehaviour
 {
     [Tooltip("Is this Player 1, 2, 3, 4.. etc?")]
     [SerializeField] public int playerNumber = 1;
 
-    float _horizontal = 0.0f;
 
+
+    #region Paddle
+    [SerializeField]
+    private GameObject _paddle = null;
+    private Rigidbody _paddlesRigidbody = null;
+    private Vector2 _paddlesVelocity = Vector2.zero;
+
+    [SerializeField]
+    private float _paddleSpeedModifier = 0.0f;
+
+    float _horizontalMovement = 0.0f;
+    #endregion
     #region Private Player Attributes
     //Controller for Left/Right Player movement (Joystick, button clicks, etc [determined in Player settings])
     private InputAction _inputAction = null;
@@ -16,10 +27,15 @@ public class PlayerMovement : Paddle
     private PlayerInputActions _playerInputActions = null;
     #endregion 
 
-    private new void Awake()
+    private void Awake()
     {
-        base.Awake();
-        //_playerInput = GetComponent<PlayerInput>();
+        _paddlesRigidbody = _paddle.GetComponent<Rigidbody>();
+        var _aPaddle = _paddle.GetComponent<Paddle>();
+        if(_aPaddle != null)
+        {
+            _paddleSpeedModifier = _aPaddle.GetPaddleBaseSpeed();
+        }
+        _playerInput = GetComponent<PlayerInput>();
         _playerInputActions = new PlayerInputActions();
     }
 
@@ -34,12 +50,8 @@ public class PlayerMovement : Paddle
         if (_inputAction != null)
         {
             //and the value being read is non-zero
-            if(_inputAction.ReadValue<float>() != 0.0f)
-            {
-                ReadHorizontalMovement();
+            ReadHorizontalMovement();
 
-            }
-            
         }
     }
 
@@ -49,10 +61,10 @@ public class PlayerMovement : Paddle
         if (_inputAction != null)
         {
             //and the value being read is non-zero
-            if (_inputAction.ReadValue<float>() != 0.0f)
-            {
-                MovePaddle();
-            }
+
+            MovePaddle();
+
+
         }
     }
 
@@ -77,7 +89,7 @@ public class PlayerMovement : Paddle
         //Test with multiple inputs
 
 
-        if (playerNumber > 0 )
+        if (playerNumber > 0)
         {
             Debug.Log(playerNumber);
             switch (playerNumber)
@@ -89,26 +101,29 @@ public class PlayerMovement : Paddle
                 case 2:
                     _inputAction = _playerInputActions.Player.Player2;
                     //Debug.Log(_inputAction.ToString());
-                    break;  
+                    break;
             }
 
 
-        }            
-      
+        }
+
 
     }
 
     public void ReadHorizontalMovement()
     {
-        _horizontal = _inputAction.ReadValue<float>() * paddleSpeed;
-        MovePaddle();
+        _horizontalMovement = _inputAction.ReadValue<float>();
+        //var playingOnThis = _playerInput.actions.devices;
+        //var playingOnThis = _playerInput.actions.actionMaps;
+        //Debug.Log($"Currently playing on: {playingOnThis}");
     }
 
     void MovePaddle()
     {
-        Vector3 paddleVelocity = paddlesRigidbody.velocity;
-        paddleVelocity.x = _horizontal * paddleSpeed;
-        paddlesRigidbody.velocity = paddleVelocity;
-    }
+        _paddlesVelocity = _paddlesRigidbody.velocity;
+        _paddlesVelocity.x = _horizontalMovement * _paddleSpeedModifier * _paddleSpeedModifier;
+        _paddlesRigidbody.velocity = _paddlesVelocity;
 
+    }
 }
+

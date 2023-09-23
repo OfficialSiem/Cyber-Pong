@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4689160413066502212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9047559969316496688}
+  - component: {fileID: 4464799295220248850}
+  - component: {fileID: 588061875762434047}
+  - component: {fileID: 3103774025823598897}
+  m_Layer: 0
+  m_Name: Touch Screen Manager (Player 1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9047559969316496688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689160413066502212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18776023, y: 6.45903, z: 2.165636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4464799295220248850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689160413066502212}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b124585bfd062a8498367fbfd6ee56ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &588061875762434047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689160413066502212}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1caafdc912a8a45ae9e741620f3caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trail: {fileID: 0}
+  directionThreshold: 1
+  _minimumDistance: 0.1
+  _maximumTime: 2
+  _startPosition: {x: 0, y: 0, z: 0}
+  _startTime: 0
+  _endPosition: {x: 0, y: 0, z: 0}
+  _endTime: 0
+--- !u!114 &3103774025823598897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689160413066502212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a865c4f910e27e443af53c3549f0fa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenBoundryLeftSide: {x: 0, y: 672}
+  screenBoundryRightSide: {x: 1248, y: 1920}
+  _JoystickSize: {x: 200, y: 200}
+  _leftJoystick: {fileID: 0}
+  _rightJoystick: {fileID: 0}
+  paddleSpeed: 14
+  paddlesRigidbody: {fileID: 0}
+  _mainCamera: {fileID: 0}
+  _playerNumber: 1

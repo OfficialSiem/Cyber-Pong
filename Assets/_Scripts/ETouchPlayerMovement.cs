@@ -6,17 +6,16 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
-public class PlayerTouchMovement : MonoBehaviour
+public class ETouchPlayerMovement : MonoBehaviour
 {
     #region Joystick
     [SerializeField]
-    private Vector2 screenBoundryLeftSide = new Vector2(0, 0);
+    public Vector2 screenBoundryLeftSide = new Vector2(0, 0);
     
     [SerializeField]
-    private Vector2 screenBoundryRightSide = new Vector2(0, 0);
+    public Vector2 screenBoundryRightSide = new Vector2(0, 0);
 
 
     [SerializeField]
@@ -41,13 +40,16 @@ public class PlayerTouchMovement : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private Camera mainCamera;
+    private Camera _mainCamera;
+
+
+    public int _playerNumber;
 
     private void Awake()
     {
-        mainCamera = Camera.main;
-        screenBoundryLeftSide = new Vector2(0, mainCamera.pixelWidth * 0.35f);
-        screenBoundryRightSide = new Vector2(mainCamera.pixelWidth * 0.65f, mainCamera.pixelWidth);
+        _mainCamera = Camera.main;
+        screenBoundryLeftSide = new Vector2(0, _mainCamera.pixelWidth * 0.35f);
+        screenBoundryRightSide = new Vector2(_mainCamera.pixelWidth * 0.65f, _mainCamera.pixelWidth);
     }
 
     private void OnEnable()
@@ -62,24 +64,37 @@ public class PlayerTouchMovement : MonoBehaviour
     {
         if(_movementFinger == null)
         {
-            //If the finger falls between this range on the screen, we're going to move the left paddle
-            if((touchedFinger.screenPosition.x >= screenBoundryLeftSide.x) && (touchedFinger.screenPosition.x <= screenBoundryLeftSide.y))
+            if( touchedFinger.index == 0 || touchedFinger.index == 1)
             {
-                _movementFinger = touchedFinger;
-                _movementAmmount = Vector2.zero;
-                _leftJoystick.gameObject.SetActive(true);
-                _leftJoystick.RectTransform.sizeDelta = _JoystickSize;
-                _leftJoystick.RectTransform.anchoredPosition = ClampStartPosition(touchedFinger.screenPosition) - new Vector2(_JoystickSize.x / 2, _JoystickSize.y / 2);
+                if (_playerNumber == 1)
+                {
+                    //If the finger falls between this range on the screen, we're going to move the left paddle
+                    if ((touchedFinger.screenPosition.x >= screenBoundryLeftSide.x) && (touchedFinger.screenPosition.x <= screenBoundryLeftSide.y))
+                    {
+                        _movementFinger = touchedFinger;
+                        _movementAmmount = Vector2.zero;
+                        _leftJoystick.gameObject.SetActive(true);
+                        _leftJoystick.RectTransform.sizeDelta = _JoystickSize;
+                        _leftJoystick.RectTransform.anchoredPosition = ClampStartPosition(touchedFinger.screenPosition) - new Vector2(_JoystickSize.x / 2, _JoystickSize.y / 2);
+                    }
+                }
+
+
+                if (_playerNumber == 2)
+                {
+                    //If the finger falls between this range on the screen, we're going to move the right paddle
+                    if ((touchedFinger.screenPosition.x >= screenBoundryRightSide.x) && (touchedFinger.screenPosition.x <= screenBoundryRightSide.y))
+                    {
+                        _movementFinger = touchedFinger;
+                        _movementAmmount = Vector2.zero;
+                        _rightJoystick.gameObject.SetActive(true);
+                        _rightJoystick.RectTransform.sizeDelta = _JoystickSize;
+                        _rightJoystick.RectTransform.anchoredPosition = ClampStartPosition(touchedFinger.screenPosition) - new Vector2(_JoystickSize.x / 2, _JoystickSize.y / 2);
+                    }
+                }
+
             }
 
-            if ((touchedFinger.screenPosition.x >= screenBoundryRightSide.x) && (touchedFinger.screenPosition.x <= screenBoundryRightSide.y))
-            {
-                _movementFinger = touchedFinger;
-                _movementAmmount = Vector2.zero;
-                _rightJoystick.gameObject.SetActive(true);
-                _rightJoystick.RectTransform.sizeDelta = _JoystickSize;
-                _rightJoystick.RectTransform.anchoredPosition = ClampStartPosition(touchedFinger.screenPosition) - new Vector2(_JoystickSize.x / 2, _JoystickSize.y / 2);
-            }
         }
     }
 
@@ -140,28 +155,33 @@ public class PlayerTouchMovement : MonoBehaviour
 
     private void HandleLostFinger(Finger lostFinger)
     {
-
-        if ((lostFinger.screenPosition.x >= screenBoundryLeftSide.x) && (lostFinger.screenPosition.x <= screenBoundryLeftSide.y))
+        if (_playerNumber == 1)
         {
-            _movementFinger = null;
-            _leftJoystick.Knob.anchoredPosition = Vector2.zero;
-            _leftJoystick.gameObject.SetActive(false);
-            
+            if ((lostFinger.screenPosition.x >= screenBoundryLeftSide.x) && (lostFinger.screenPosition.x <= screenBoundryLeftSide.y))
+            {
+                _movementFinger = null;
+                _leftJoystick.Knob.anchoredPosition = Vector2.zero;
+                _leftJoystick.gameObject.SetActive(false);
+
+            }
         }
 
-        if ((lostFinger.screenPosition.x >= screenBoundryRightSide.x) && (lostFinger.screenPosition.x <= screenBoundryRightSide.y))
+        if (_playerNumber == 2)
         {
-            _movementFinger = null;
-            _rightJoystick.Knob.anchoredPosition = Vector2.zero;
-            _rightJoystick.gameObject.SetActive(false);
+            if ((lostFinger.screenPosition.x >= screenBoundryRightSide.x) && (lostFinger.screenPosition.x <= screenBoundryRightSide.y))
+            {
+                _movementFinger = null;
+                _rightJoystick.Knob.anchoredPosition = Vector2.zero;
+                _rightJoystick.gameObject.SetActive(false);
 
+            }
         }
         _movementAmmount = Vector2.zero;
     }
 
     private Vector2 ClampStartPosition(Vector2 startPosition)
     {
-        Debug.Log($"Player touched at this coordinate point: {startPosition}, also screen wdith and height is {mainCamera.pixelWidth}, {mainCamera.pixelHeight}");
+        Debug.Log($"Player touched at this coordinate point: {startPosition}, also screen wdith and height is {_mainCamera.pixelWidth}, {_mainCamera.pixelHeight}");
         //This clamps the position so the player can still see/move the joystick on screen
 
         #region Clamping the width
@@ -169,9 +189,9 @@ public class PlayerTouchMovement : MonoBehaviour
         {
             startPosition.x = _JoystickSize.x/2;
         }
-        else if (startPosition.x > mainCamera.pixelWidth - _JoystickSize.x / 2)
+        else if (startPosition.x > _mainCamera.pixelWidth - _JoystickSize.x / 2)
         {
-            startPosition.x = mainCamera.pixelWidth - _JoystickSize.x / 2;
+            startPosition.x = _mainCamera.pixelWidth - _JoystickSize.x / 2;
         }
         #endregion
 
@@ -180,22 +200,22 @@ public class PlayerTouchMovement : MonoBehaviour
         {
             startPosition.y = _JoystickSize.y/2;
         }
-        else if (startPosition.y > mainCamera.pixelHeight - _JoystickSize.y / 2)
+        else if (startPosition.y > _mainCamera.pixelHeight - _JoystickSize.y / 2)
         {
-            startPosition.y = mainCamera.pixelHeight - _JoystickSize.y / 2;
+            startPosition.y = _mainCamera.pixelHeight - _JoystickSize.y / 2;
         }
         #endregion
-        Debug.Log($"But Joystick will start here {startPosition}, also screen wdith and height is {mainCamera.pixelWidth}, {mainCamera.pixelHeight}");
+        Debug.Log($"But Joystick will start here {startPosition}, also screen wdith and height is {_mainCamera.pixelWidth}, {_mainCamera.pixelHeight}");
         return startPosition;
     }
 
 
     private void OnDisable()
     {
-        EnhancedTouchSupport.Enable();
         ETouch.Touch.onFingerDown -= HandleFingerDown;
         ETouch.Touch.onFingerUp -= HandleLostFinger;
         ETouch.Touch.onFingerMove -= HandleFingerMove;
+        EnhancedTouchSupport.Disable();
     }
 
     private void Update()

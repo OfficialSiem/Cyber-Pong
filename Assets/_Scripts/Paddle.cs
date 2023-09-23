@@ -5,14 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Paddle : MonoBehaviour
 {
+    [SerializeField]
+    private float _paddleBaseSpeed = 12.5f;
 
-    public float paddleSpeed = 5.0f;
-
-    protected Rigidbody paddlesRigidbody;
-
-    protected void Awake()
+    public float GetPaddleBaseSpeed()
     {
-        paddlesRigidbody = GetComponent<Rigidbody>();
+        return _paddleBaseSpeed;
+    }
+
+    public Vector3 GetPaddleVelocity()
+    {
+        return GetComponent<Rigidbody>().velocity;
     }
 
 }
