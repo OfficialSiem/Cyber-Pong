@@ -37,6 +37,7 @@ public class PlayerMovement : Paddle
             if(_inputAction.ReadValue<float>() != 0.0f)
             {
                 ReadHorizontalMovement();
+
             }
             
         }
@@ -100,6 +101,7 @@ public class PlayerMovement : Paddle
     public void ReadHorizontalMovement()
     {
         _horizontal = _inputAction.ReadValue<float>() * paddleSpeed;
+        MovePaddle();
     }
 
     void MovePaddle()

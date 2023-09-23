@@ -58,7 +58,7 @@ public class InputManager : Singleton<InputManager>
     {
         if(OnTouchPrimary != null)
         {
-            //Debug.Log("Start Touch");
+            //Debug.Log("Start Touch" + _playerInputActions.SwipeControlTest.PrimaryPosition.ReadValue<Vector2>());
             Vector3 position = Utils.ScreenToTwoDWorld(mainCamera, _playerInputActions.SwipeControlTest.PrimaryPosition.ReadValue<Vector2>());
             OnTouchPrimary(position, (float)context.startTime);
         }
@@ -69,7 +69,7 @@ public class InputManager : Singleton<InputManager>
     {
         if(OnEndTouchPrimary != null)
         {
-            //Debug.Log("End Touch");
+            //Debug.Log("End Touch" + _playerInputActions.SwipeControlTest.PrimaryPosition.ReadValue<Vector2>());
             Vector3 position = Utils.ScreenToTwoDWorld(mainCamera, _playerInputActions.SwipeControlTest.PrimaryPosition.ReadValue<Vector2>());
             OnEndTouchPrimary(position, (float)context.time);
         }
