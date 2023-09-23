@@ -90,7 +90,7 @@ public class BallMovement : MonoBehaviour
             //If the player was moving
             if (_paddleVelocity.x != 0)
             {
-                //add the players speed (which is only in the Z direction) to the ball!
+                //add the players speed (which is only in the X direction) to the ball!
                 velocityX += _paddleVelocity.x * whatPercentageOfSpeedToTakeFromPaddle;
             }
             
