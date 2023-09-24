@@ -75,6 +75,7 @@ public class TrackingEveryInput : Singleton<TrackingEveryInput>
         
     }
 
+    //Omg there's only one way to do this, brute force, see https://gamedevdustin.medium.com/the-any-key-problem-with-the-new-input-system-for-simultaneous-input-detection-in-unity-2023-1-e436226d4818
     private void CheckWhatKeyboardButtonWasPressed()
     {
         //if a
@@ -82,7 +83,7 @@ public class TrackingEveryInput : Singleton<TrackingEveryInput>
         {
             File.AppendAllText(locationOfTextFile, GetTodayDate() + 
                 $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
-                $"\tButton Pressed:Keyboard A Key" + 
+                $"\tKey Pressed: Keyboard A" + 
                 System.Environment.NewLine);
         }
 
@@ -91,7 +92,7 @@ public class TrackingEveryInput : Singleton<TrackingEveryInput>
         {
             File.AppendAllText(locationOfTextFile, GetTodayDate() +
                 $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
-                $"\tButton Pressed:Keyboard S Key" + 
+                $"\tKey Pressed: Keyboard S" + 
                 System.Environment.NewLine);
         }
 
@@ -100,7 +101,7 @@ public class TrackingEveryInput : Singleton<TrackingEveryInput>
         {
             File.AppendAllText(locationOfTextFile, GetTodayDate() +
                 $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
-                $"\tButton Pressed:Keyboard K Key" + 
+                $"\tKey Pressed: Keyboard K" + 
                 System.Environment.NewLine);
         }
 
@@ -109,9 +110,272 @@ public class TrackingEveryInput : Singleton<TrackingEveryInput>
         {
             File.AppendAllText(locationOfTextFile, GetTodayDate() +
                 $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
-                $"\tButton Pressed:Keyboard L Key" +
+                $"\tKey Pressed: Keyboard L" +
                 System.Environment.NewLine);
         }
+
+        //if q
+        if (Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard Q" +
+                System.Environment.NewLine);
+        }
+
+        //if w
+        if (Keyboard.current.wKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard W" +
+                System.Environment.NewLine);
+        }
+
+        //if e
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard E" +
+                System.Environment.NewLine);
+        }
+
+        //if r
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard R" +
+                System.Environment.NewLine);
+        }
+
+        //if t
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard R" +
+                System.Environment.NewLine);
+        }
+
+        //if q
+        if (Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard Q" +
+                System.Environment.NewLine);
+        }
+
+        //if w
+        if (Keyboard.current.wKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard W" +
+                System.Environment.NewLine);
+        }
+
+        //if e
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard E" +
+                System.Environment.NewLine);
+        }
+
+        //if r
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard R" +
+                System.Environment.NewLine);
+        }
+
+        //if t
+        if (Keyboard.current.tKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard T" +
+                System.Environment.NewLine);
+        }
+
+        //if y
+        if (Keyboard.current.yKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard Y" +
+                System.Environment.NewLine);
+        }
+
+        //if u
+        if (Keyboard.current.uKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard U" +
+                System.Environment.NewLine);
+        }
+
+
+        //if i
+        if (Keyboard.current.iKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard I" +
+                System.Environment.NewLine);
+        }
+
+        //if o
+        if (Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard O" +
+                System.Environment.NewLine);
+        }
+
+        //if p
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard P" +
+                System.Environment.NewLine);
+        }
+
+        //if d
+        if (Keyboard.current.dKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard D" +
+                System.Environment.NewLine);
+        }
+
+        //if f
+        if (Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard F" +
+                System.Environment.NewLine);
+        }
+
+        //if g
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard G" +
+                System.Environment.NewLine);
+        }
+
+        //if h
+        if (Keyboard.current.hKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard H" +
+                System.Environment.NewLine);
+        }
+
+        //if j
+        if (Keyboard.current.jKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard J" +
+                System.Environment.NewLine);
+        }
+
+        //if z
+        if (Keyboard.current.zKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard Z" +
+                System.Environment.NewLine);
+        }
+
+        //if x
+        if (Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard X" +
+                System.Environment.NewLine);
+        }
+
+        //if c
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard C" +
+                System.Environment.NewLine);
+        }
+
+        //if v
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard V" +
+                System.Environment.NewLine);
+        }
+
+        //if b
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard B" +
+                System.Environment.NewLine);
+        }
+
+        //if n
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard N" +
+                System.Environment.NewLine);
+        }
+
+        //if m
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard M" +
+                System.Environment.NewLine);
+        }
+
+        //if space
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard Space" +
+                System.Environment.NewLine);
+        }
+
+        //if enter
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+                $"\tKey Pressed: Keyboard Enter" +
+                System.Environment.NewLine);
+        }
+
     }
 
     public void LogScreenPressDown(Vector2 screenPosition)
