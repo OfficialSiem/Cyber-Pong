@@ -116,7 +116,10 @@ public class ETouchGeneralInput : MonoBehaviour
             //If you touched somewhere within the confines of the screen
             if(FingerScreenPositionWasWithinScreenBoundries(touchedFinger.screenPosition))
             {
-                _inputTracker.LogScreenPressDown(touchedFinger.screenPosition);
+                if(_eTouchPlayerMovement == null)
+                {
+                    _inputTracker.LogScreenPressDown(touchedFinger.screenPosition);
+                }
                 _movementFinger = touchedFinger;
                 Vector3 position = Utils.ScreenCoordinatesTo2DWorldCoordinates(_mainCamera, touchedFinger.screenPosition);
                 ETouch.Touch _currentTouch = touchedFinger.currentTouch;
@@ -136,7 +139,10 @@ public class ETouchGeneralInput : MonoBehaviour
 
         if (_movementFinger == lostFinger)
         {
-            _inputTracker.LogScreenLyftUp(lostFinger.screenPosition);
+            if (_eTouchPlayerMovement == null)
+            {
+                _inputTracker.LogScreenLyftUp(lostFinger.screenPosition);
+            }
             Vector3 lostPosition = Utils.ScreenCoordinatesTo2DWorldCoordinates(_mainCamera, lostFinger.screenPosition);
             ETouch.Touch _currentLostTouch = lostFinger.currentTouch;
             SwipeEnd(lostPosition, (float)_currentLostTouch.time);

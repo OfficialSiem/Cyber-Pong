@@ -10,6 +10,9 @@ using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
 public class ETouchPlayerMovement : MonoBehaviour
 {
+    [SerializeField]
+    TrackingEveryInput _inputTracker = null;
+
     #region Joystick
     [SerializeField]
     public Vector2 screenBoundryLeftSide = new Vector2(0, 0);
@@ -47,6 +50,7 @@ public class ETouchPlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        _inputTracker = TrackingEveryInput.Instance;
         _mainCamera = Camera.main;
         screenBoundryLeftSide = new Vector2(0, _mainCamera.pixelWidth * 0.35f);
         screenBoundryRightSide = new Vector2(_mainCamera.pixelWidth * 0.65f, _mainCamera.pixelWidth);
@@ -68,9 +72,13 @@ public class ETouchPlayerMovement : MonoBehaviour
             {
                 if (_playerNumber == 1)
                 {
+
+                   
                     //If the finger falls between this range on the screen, we're going to move the left paddle
                     if ((touchedFinger.screenPosition.x >= screenBoundryLeftSide.x) && (touchedFinger.screenPosition.x <= screenBoundryLeftSide.y))
                     {
+                        //We can infer Player1 was pressed here, because of the touches location
+                        _inputTracker.LogScreenPressDown(touchedFinger.screenPosition, _playerNumber);
                         _movementFinger = touchedFinger;
                         _movementAmmount = Vector2.zero;
                         _leftJoystick.gameObject.SetActive(true);
@@ -79,12 +87,15 @@ public class ETouchPlayerMovement : MonoBehaviour
                     }
                 }
 
-
                 if (_playerNumber == 2)
                 {
+
+                    
                     //If the finger falls between this range on the screen, we're going to move the right paddle
                     if ((touchedFinger.screenPosition.x >= screenBoundryRightSide.x) && (touchedFinger.screenPosition.x <= screenBoundryRightSide.y))
                     {
+                        //We can infer because this was pressed here, it was Player2s Press
+                        _inputTracker.LogScreenPressDown(touchedFinger.screenPosition, _playerNumber);
                         _movementFinger = touchedFinger;
                         _movementAmmount = Vector2.zero;
                         _rightJoystick.gameObject.SetActive(true);
@@ -93,8 +104,21 @@ public class ETouchPlayerMovement : MonoBehaviour
                     }
                 }
 
-            }
+                if (_playerNumber == 0)
+                {
 
+
+                    //Track a finger thats just pressing in between the players
+                    if ((touchedFinger.screenPosition.x >= screenBoundryLeftSide.y) && (touchedFinger.screenPosition.x <= screenBoundryRightSide.x))
+                    {
+                        //We can infer because this was pressed here, it was Player2s Press
+                        _inputTracker.LogScreenPressDown(touchedFinger.screenPosition);
+                        _movementFinger = touchedFinger;
+                        _movementAmmount = Vector2.zero;
+                    }
+                }
+
+            }
         }
     }
 
@@ -157,21 +181,33 @@ public class ETouchPlayerMovement : MonoBehaviour
     {
         if (_playerNumber == 1)
         {
-
-            _movementFinger = null;
-            _leftJoystick.Knob.anchoredPosition = Vector2.zero;
-            _leftJoystick.gameObject.SetActive(false);
-
-
+            if(_movementFinger == lostFinger)
+            {
+                _inputTracker.LogScreenLyftUp(lostFinger.screenPosition, _playerNumber);
+                _movementFinger = null;
+                _leftJoystick.Knob.anchoredPosition = Vector2.zero;
+                _leftJoystick.gameObject.SetActive(false);
+            }
         }
 
         if (_playerNumber == 2)
         {
+            if (_movementFinger == lostFinger)
+            {
+                _inputTracker.LogScreenLyftUp(lostFinger.screenPosition, _playerNumber);
+                _movementFinger = null;
+                _rightJoystick.Knob.anchoredPosition = Vector2.zero;
+                _rightJoystick.gameObject.SetActive(false);
+            }
+        }
 
-            _movementFinger = null;
-            _rightJoystick.Knob.anchoredPosition = Vector2.zero;
-            _rightJoystick.gameObject.SetActive(false);
-
+        if (_playerNumber == 0)
+        {
+            if (_movementFinger == lostFinger)
+            {
+                _inputTracker.LogScreenLyftUp(lostFinger.screenPosition);
+                _movementFinger = null;
+            }
         }
         _movementAmmount = Vector2.zero;
     }

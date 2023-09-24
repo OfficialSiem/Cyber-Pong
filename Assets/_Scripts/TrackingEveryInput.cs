@@ -38,6 +38,10 @@ public class TrackingEveryInput : Singleton<TrackingEveryInput>
             //-otherwise begin writing a header to using a file
             File.WriteAllText(locationOfTextFile, "All Player Inputs Recieved:" + System.Environment.NewLine + System.Environment.NewLine);
         }
+
+        //Create a New Line outside of the header to help seperate sessions
+        File.AppendAllText(locationOfTextFile, " " + System.Environment.NewLine);
+
     }
 
     public void LogKeyboardInputs(InputAction.CallbackContext context)
