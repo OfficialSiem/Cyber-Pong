@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.EnhancedTouch;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
 //Smallest number runs earliest!
-//[DefaultExecutionOrder(-10)]
+
 public class ETouchGeneralInput : MonoBehaviour
 {
     #region Swipe Mechanic
@@ -50,8 +50,20 @@ public class ETouchGeneralInput : MonoBehaviour
     [SerializeField]
     private ETouchPlayerMovement _eTouchPlayerMovement;
 
+    [SerializeField]
+    TrackingEveryInput _inputTracker = null;
+
     private void Awake()
     {
+        _inputTracker = TrackingEveryInput.Instance;
+        if( _inputTracker != null )
+        {
+            Debug.Log("Found Input Tracker");
+        }
+        else
+        {
+            Debug.Log("Nothing to Track");
+        }
         _eTouchPlayerMovement = GetComponent<ETouchPlayerMovement>();
         _mainCamera = Camera.main;
         _screenHeightBoundries = new Vector2(0, _mainCamera.pixelHeight);
@@ -104,6 +116,7 @@ public class ETouchGeneralInput : MonoBehaviour
             //If you touched somewhere within the confines of the screen
             if(FingerScreenPositionWasWithinScreenBoundries(touchedFinger.screenPosition))
             {
+                _inputTracker.LogScreenPressDown(touchedFinger.screenPosition);
                 _movementFinger = touchedFinger;
                 Vector3 position = Utils.ScreenCoordinatesTo2DWorldCoordinates(_mainCamera, touchedFinger.screenPosition);
                 ETouch.Touch _currentTouch = touchedFinger.currentTouch;
@@ -120,15 +133,15 @@ public class ETouchGeneralInput : MonoBehaviour
 
     private void HandleGeneralFingerLost(Finger lostFinger)
     {
-        if (FingerScreenPositionWasWithinScreenBoundries(lostFinger.screenPosition))
+
+        if (_movementFinger == lostFinger)
         {
-            if (_movementFinger == lostFinger)
-            {
-                Vector3 lostPosition = Utils.ScreenCoordinatesTo2DWorldCoordinates(_mainCamera, lostFinger.screenPosition);
-                ETouch.Touch _currentLostTouch = lostFinger.currentTouch;
-                SwipeEnd(lostPosition, (float)_currentLostTouch.time);
-            }
+            _inputTracker.LogScreenLyftUp(lostFinger.screenPosition);
+            Vector3 lostPosition = Utils.ScreenCoordinatesTo2DWorldCoordinates(_mainCamera, lostFinger.screenPosition);
+            ETouch.Touch _currentLostTouch = lostFinger.currentTouch;
+            SwipeEnd(lostPosition, (float)_currentLostTouch.time);
         }
+        
     }
 
 
@@ -185,12 +198,12 @@ public class ETouchGeneralInput : MonoBehaviour
                 Debug.DrawLine(_startPosition, _endPosition, Color.red, 5f);
                 Vector3 direction = _endPosition - _startPosition;
                 Vector2 directionTwoD = new Vector2(direction.x, direction.z).normalized;
-                SwipeDirection(directionTwoD);
+                DebugTestSwipeDirection(directionTwoD);
             }
         }
     }
 
-    private void SwipeDirection(Vector2 directionTwoD)
+    private void DebugTestSwipeDirection(Vector2 directionTwoD)
     {
         if (Vector2.Dot(Vector2.up, directionTwoD) > directionThreshold)
         {

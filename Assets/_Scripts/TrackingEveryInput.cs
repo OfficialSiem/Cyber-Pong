@@ -3,24 +3,23 @@ using System.IO;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class TrackingEveryInput : MonoBehaviour
+
+public class TrackingEveryInput : Singleton<TrackingEveryInput>
 {
     [SerializeField]
-    private string subfolderName = string.Empty;
+    private string subfolderName = "EveryPressOrKeyPlayerMade";
 
     [SerializeField]
-    private string txtFileName = string.Empty;
+    private string txtFileName = "usage";
 
     [SerializeField]
     private string locationOfTextFile = string.Empty;
 
-    [SerializeField]
-    private PlayerInputActions _playerInputActions = null;
 
 
-    private void Awake()
+
+    private void Start()
     {
-        _playerInputActions = new PlayerInputActions();
         //Create a folder called Streaming Asset Path and a sub folder called
         Directory.CreateDirectory(Application.streamingAssetsPath + $"/{subfolderName}/");
         CreateTextFile();
@@ -33,95 +32,127 @@ public class TrackingEveryInput : MonoBehaviour
         //Create the name of the text file
         locationOfTextFile = Application.streamingAssetsPath + $"/{subfolderName}/" + $"{txtFileName}" + ".txt";
 
-        //Check if file name already exists, if it does skip-
+        //Check if file name already exists, if it does skip writting a header-
         if(!File.Exists(locationOfTextFile)){
 
-            //-otherwise begin writing a header to usage file
+            //-otherwise begin writing a header to using a file
             File.WriteAllText(locationOfTextFile, "All Player Inputs Recieved:" + System.Environment.NewLine + System.Environment.NewLine);
         }
     }
 
-    public void LogInputs(InputAction.CallbackContext context)
+    public void LogKeyboardInputs(InputAction.CallbackContext context)
     {
-        //Check if a Player Input System Exsits
-        if(_playerInputActions != null)
+        //Check if file exists
+        if (File.Exists(locationOfTextFile))
         {
-            if (File.Exists(locationOfTextFile))
-            {
-                //Going Grandular
-                //For Keyboard
+            //Going Grandular
+            //For Keyboard
                 
-                //If a button was pressed
-                if(context.performed)
+            //If a button was pressed
+            if(context.performed)
+            {
+                //Check which keyboard button was pressed!
+                if (Keyboard.current != null)
                 {
-                    //Check which keyboard button was pressed!
-                    
-                    if (Keyboard.current != null)
-                    {
-                        #region Keyboard Presses
-                        if (Keyboard.current.aKey.wasPressedThisFrame)
-                        {
-                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard A Key" + System.Environment.NewLine);
-                        }
-
-                        //if s
-                        if (Keyboard.current.sKey.wasPressedThisFrame)
-                        {
-                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard S Key" + System.Environment.NewLine);
-                        }
-
-                        //if k
-                        if (Keyboard.current.kKey.wasPressedThisFrame)
-                        {
-                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard K Key" + System.Environment.NewLine);
-                        }
-
-                        //if l
-                        if (Keyboard.current.lKey.wasPressedThisFrame)
-                        {
-                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Button Pressed:Keyboard L Key" + System.Environment.NewLine);
-                        }
-                        #endregion
-                    }
-                    
-                    if(Gamepad.current != null)
-                    {
-
-                    }
-
-                    if(Touchscreen.current != null)
-                    {
-                        /*
-                        _playerInputActions.
-                        var touchZero = Touchscreen.current.touches[0]
-                        var touchOne = Touchscreen.current.touches[1]
-                        
-                        if (touchFi) {
-                            var touch = Touchscreen.current.touches[0].position;
-                            var inWorldPosition = Camera.main.ScreenToWorldPoint(touch);
-                            File.AppendAllText(locationOfTextFile, System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt") +
-                                $"\tTime (seconds): {Time.realtimeSinceStartup}\t" + $" Touch Pressed At Pixel Coordinate:{touch}" + System.Environment.NewLine);
-                        }*/
-
-
-                    }
-
-
+                    #region Keyboard Presses
+                    CheckWhatKeyboardButtonWasPressed();
+                    #endregion
                 }
 
-                //if Touchpad
-                //File.AppendAllText(txtDocumentName, $"{Time.realtimeSinceStartup}\t" + "WhereInSpace Pressed\t");
-                //if UI Button Pressed
-                //File.AppendAllText(txtDocumentName, $"{Time.realtimeSinceStartup}\t" + "UI-Button-Name Pressed\t");
             }
+
+            //if Touchpad
+            //File.AppendAllText(txtDocumentName, $"{Time.realtimeSinceStartup}\t" + "WhereInSpace Pressed\t");
+            //if UI Button Pressed
+            //File.AppendAllText(txtDocumentName, $"{Time.realtimeSinceStartup}\t" + "UI-Button-Name Pressed\t");
         }
+        
         
         
     }
 
+    private void CheckWhatKeyboardButtonWasPressed()
+    {
+        //if a
+        if (Keyboard.current.aKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() + 
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
+                $"\tButton Pressed:Keyboard A Key" + 
+                System.Environment.NewLine);
+        }
 
+        //if s
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
+                $"\tButton Pressed:Keyboard S Key" + 
+                System.Environment.NewLine);
+        }
+
+        //if k
+        if (Keyboard.current.kKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
+                $"\tButton Pressed:Keyboard K Key" + 
+                System.Environment.NewLine);
+        }
+
+        //if l
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            File.AppendAllText(locationOfTextFile, GetTodayDate() +
+                $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" + 
+                $"\tButton Pressed:Keyboard L Key" +
+                System.Environment.NewLine);
+        }
+    }
+
+    public void LogScreenPressDown(Vector2 screenPosition)
+    {
+        Debug.Log("Finger was Pressed Down");
+        File.AppendAllText(locationOfTextFile, GetTodayDate() +
+            $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+            $"\tFinger Down Location: {screenPosition}"+
+            System.Environment.NewLine);
+    }
+
+    public void LogScreenLyftUp(Vector2 screenPosition)
+    {
+        Debug.Log("Finger was Lyfted");
+        File.AppendAllText(locationOfTextFile, GetTodayDate() +
+            $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+            $"\tFinger Up   Location {screenPosition}" +
+            System.Environment.NewLine);
+    }
+
+    public void LogScreenPressDown(Vector2 screenPosition, int playerNumber)
+    {
+        Debug.Log($"P{playerNumber} Finger was Pressed Down");
+        File.AppendAllText(locationOfTextFile, GetTodayDate() +
+            $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+            $"\tP{playerNumber} Finger Down Location: {screenPosition}" +
+            System.Environment.NewLine);
+    }
+
+    public void LogScreenLyftUp(Vector2 screenPosition, int playerNumber)
+    {
+        Debug.Log($"P{playerNumber} was Lyfted");
+        File.AppendAllText(locationOfTextFile, GetTodayDate() +
+            $"\tTime (seconds): {GetTimeSinceGameBootedUp()}" +
+            $"\tP{playerNumber} Finger Up   Location {screenPosition}" +
+            System.Environment.NewLine);
+    }
+
+    private string GetTimeSinceGameBootedUp()
+    {
+        return Time.realtimeSinceStartup.ToString("F5");
+    }
+
+    private string GetTodayDate()
+    {
+        return System.DateTime.UtcNow.ToLocalTime().ToString("M/d/yy   hh:mm tt");
+    }
 }

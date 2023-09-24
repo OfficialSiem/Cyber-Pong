@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     float _horizontalMovement = 0.0f;
     #endregion
+
     #region Private Player Attributes
     //Controller for Left/Right Player movement (Joystick, button clicks, etc [determined in Player settings])
     private InputAction _inputAction = null;

@@ -106,7 +106,7 @@ public class ETouchPlayerMovement : MonoBehaviour
             float _maxMovement = _JoystickSize.x / 2;
             ETouch.Touch _currentTouch = movedFinger.currentTouch;
 
-            if ((movedFinger.screenPosition.x >= screenBoundryLeftSide.x) && (movedFinger.screenPosition.x <= screenBoundryLeftSide.y))
+            if (_playerNumber == 1)
             {
                 Vector2 _shiftedJoyStickCenter = _leftJoystick.RectTransform.anchoredPosition;
                 Vector2 _trueJoystickCenter = _leftJoystick.RectTransform.anchoredPosition + new Vector2(_JoystickSize.x / 2, _JoystickSize.y / 2);
@@ -128,7 +128,7 @@ public class ETouchPlayerMovement : MonoBehaviour
                 _movementAmmount = _knobPosition / _maxMovement;
             }
 
-            if ((movedFinger.screenPosition.x >= screenBoundryRightSide.x) && (movedFinger.screenPosition.x <= screenBoundryRightSide.y))
+            if (_playerNumber == 2)
             {
                 Vector2 _shiftedJoyStickCenter = _rightJoystick.RectTransform.anchoredPosition;
                 Vector2 _trueJoystickCenter = _rightJoystick.RectTransform.anchoredPosition + new Vector2(_JoystickSize.x / 2, _JoystickSize.y / 2);
@@ -157,31 +157,28 @@ public class ETouchPlayerMovement : MonoBehaviour
     {
         if (_playerNumber == 1)
         {
-            if ((lostFinger.screenPosition.x >= screenBoundryLeftSide.x) && (lostFinger.screenPosition.x <= screenBoundryLeftSide.y))
-            {
-                _movementFinger = null;
-                _leftJoystick.Knob.anchoredPosition = Vector2.zero;
-                _leftJoystick.gameObject.SetActive(false);
 
-            }
+            _movementFinger = null;
+            _leftJoystick.Knob.anchoredPosition = Vector2.zero;
+            _leftJoystick.gameObject.SetActive(false);
+
+
         }
 
         if (_playerNumber == 2)
         {
-            if ((lostFinger.screenPosition.x >= screenBoundryRightSide.x) && (lostFinger.screenPosition.x <= screenBoundryRightSide.y))
-            {
-                _movementFinger = null;
-                _rightJoystick.Knob.anchoredPosition = Vector2.zero;
-                _rightJoystick.gameObject.SetActive(false);
 
-            }
+            _movementFinger = null;
+            _rightJoystick.Knob.anchoredPosition = Vector2.zero;
+            _rightJoystick.gameObject.SetActive(false);
+
         }
         _movementAmmount = Vector2.zero;
     }
 
     private Vector2 ClampStartPosition(Vector2 startPosition)
     {
-        Debug.Log($"Player touched at this coordinate point: {startPosition}, also screen wdith and height is {_mainCamera.pixelWidth}, {_mainCamera.pixelHeight}");
+        //Debug.Log($"Player touched at this coordinate point: {startPosition}, also screen wdith and height is {_mainCamera.pixelWidth}, {_mainCamera.pixelHeight}");
         //This clamps the position so the player can still see/move the joystick on screen
 
         #region Clamping the width
@@ -205,7 +202,7 @@ public class ETouchPlayerMovement : MonoBehaviour
             startPosition.y = _mainCamera.pixelHeight - _JoystickSize.y / 2;
         }
         #endregion
-        Debug.Log($"But Joystick will start here {startPosition}, also screen wdith and height is {_mainCamera.pixelWidth}, {_mainCamera.pixelHeight}");
+        //Debug.Log($"But Joystick will start here {startPosition}, also screen wdith and height is {_mainCamera.pixelWidth}, {_mainCamera.pixelHeight}");
         return startPosition;
     }
 
