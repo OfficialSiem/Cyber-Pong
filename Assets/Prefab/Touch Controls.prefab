@@ -1,0 +1,334 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2721790337604466984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8168463672312673988}
+  - component: {fileID: 1030834042809058064}
+  - component: {fileID: 3523351243894754396}
+  m_Layer: 0
+  m_Name: Touch Screen Recorder (Player 0)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8168463672312673988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721790337604466984}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.9770417, y: -0.54096985, z: -9.924521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4763173245800495614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030834042809058064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721790337604466984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8052e81316661854997731ccbbc46906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _screenWidthBoundries: {x: 0, y: 0}
+  _screenHeightBoundries: {x: 0, y: 0}
+  _trail: {fileID: 0}
+  directionThreshold: 0.9
+  _minimumDistance: 0
+  _maximumTime: 2
+  _startPosition: {x: 0, y: 0, z: 0}
+  _startTime: 0
+  _endPosition: {x: 0, y: 0, z: 0}
+  _endTime: 0
+  _mainCamera: {fileID: 0}
+  _eTouchPlayerMovement: {fileID: 0}
+  _inputTracker: {fileID: 0}
+--- !u!114 &3523351243894754396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721790337604466984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a865c4f910e27e443af53c3549f0fa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputTracker: {fileID: 0}
+  screenBoundryLeftSide: {x: 0, y: 672}
+  screenBoundryRightSide: {x: 1248, y: 1920}
+  _JoystickSize: {x: 200, y: 200}
+  _leftJoystick: {fileID: 0}
+  _rightJoystick: {fileID: 0}
+  paddleSpeed: 14
+  paddlesRigidbody: {fileID: 0}
+  _mainCamera: {fileID: 0}
+  _playerNumber: 0
+--- !u!1 &3567518514536753839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8813995024769324814}
+  - component: {fileID: 4585779973969436574}
+  m_Layer: 0
+  m_Name: Touch Screen Manager (Non Player)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8813995024769324814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567518514536753839}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.9770417, y: -0.54096985, z: -9.924521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4763173245800495614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4585779973969436574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567518514536753839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8052e81316661854997731ccbbc46906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _screenWidthBoundries: {x: 0, y: 0}
+  _screenHeightBoundries: {x: 0, y: 0}
+  _trail: {fileID: 0}
+  directionThreshold: 0.9
+  _minimumDistance: 0
+  _maximumTime: 2
+  _startPosition: {x: 0, y: 0, z: 0}
+  _startTime: 0
+  _endPosition: {x: 0, y: 0, z: 0}
+  _endTime: 0
+  _mainCamera: {fileID: 0}
+  _eTouchPlayerMovement: {fileID: 0}
+  _inputTracker: {fileID: 0}
+--- !u!1 &3956734693046619779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8394856842338587854}
+  - component: {fileID: 3410807275719562097}
+  - component: {fileID: 9070968363301485079}
+  m_Layer: 0
+  m_Name: Touch Screen Manager (Player 1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8394856842338587854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956734693046619779}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.9770417, y: -0.54096985, z: -9.924521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4763173245800495614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3410807275719562097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956734693046619779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8052e81316661854997731ccbbc46906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _screenWidthBoundries: {x: 0, y: 0}
+  _screenHeightBoundries: {x: 0, y: 0}
+  _trail: {fileID: 0}
+  directionThreshold: 0.9
+  _minimumDistance: 0
+  _maximumTime: 2
+  _startPosition: {x: 0, y: 0, z: 0}
+  _startTime: 0
+  _endPosition: {x: 0, y: 0, z: 0}
+  _endTime: 0
+  _mainCamera: {fileID: 0}
+  _eTouchPlayerMovement: {fileID: 0}
+  _inputTracker: {fileID: 0}
+--- !u!114 &9070968363301485079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956734693046619779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a865c4f910e27e443af53c3549f0fa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputTracker: {fileID: 0}
+  screenBoundryLeftSide: {x: 0, y: 672}
+  screenBoundryRightSide: {x: 1248, y: 1920}
+  _JoystickSize: {x: 200, y: 200}
+  _leftJoystick: {fileID: 0}
+  _rightJoystick: {fileID: 0}
+  paddleSpeed: 14
+  paddlesRigidbody: {fileID: 0}
+  _mainCamera: {fileID: 0}
+  _playerNumber: 1
+--- !u!1 &5859862172035690540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3893742478999531799}
+  - component: {fileID: 8330795031632721690}
+  - component: {fileID: 5526220680405669393}
+  m_Layer: 0
+  m_Name: Touch Screen Manager (Player 2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3893742478999531799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859862172035690540}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.9770417, y: -0.54096985, z: -9.924521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4763173245800495614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8330795031632721690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859862172035690540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8052e81316661854997731ccbbc46906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _screenWidthBoundries: {x: 0, y: 0}
+  _screenHeightBoundries: {x: 0, y: 0}
+  _trail: {fileID: 0}
+  directionThreshold: 0.9
+  _minimumDistance: 0
+  _maximumTime: 2
+  _startPosition: {x: 0, y: 0, z: 0}
+  _startTime: 0
+  _endPosition: {x: 0, y: 0, z: 0}
+  _endTime: 0
+  _mainCamera: {fileID: 0}
+  _eTouchPlayerMovement: {fileID: 0}
+  _inputTracker: {fileID: 0}
+--- !u!114 &5526220680405669393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859862172035690540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a865c4f910e27e443af53c3549f0fa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputTracker: {fileID: 0}
+  screenBoundryLeftSide: {x: 0, y: 672}
+  screenBoundryRightSide: {x: 1248, y: 1920}
+  _JoystickSize: {x: 200, y: 200}
+  _leftJoystick: {fileID: 0}
+  _rightJoystick: {fileID: 0}
+  paddleSpeed: 14
+  paddlesRigidbody: {fileID: 0}
+  _mainCamera: {fileID: 0}
+  _playerNumber: 2
+--- !u!1 &6580449940143990299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4763173245800495614}
+  m_Layer: 0
+  m_Name: Touch Controls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4763173245800495614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6580449940143990299}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.164802, y: 7, z: 12.0901575}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8168463672312673988}
+  - {fileID: 8394856842338587854}
+  - {fileID: 3893742478999531799}
+  - {fileID: 8813995024769324814}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

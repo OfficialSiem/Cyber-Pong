@@ -28,21 +28,53 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInputActions _playerInputActions = null;
     #endregion 
 
-    private void Awake()
+    private void OnEnable()
     {
-        _paddlesRigidbody = _paddle.GetComponent<Rigidbody>();
-        var _aPaddle = _paddle.GetComponent<Paddle>();
-        if(_aPaddle != null)
-        {
-            _paddleSpeedModifier = _aPaddle.GetPaddleBaseSpeed();
-        }
         _playerInput = GetComponent<PlayerInput>();
         _playerInputActions = new PlayerInputActions();
+        //Enable Player Action map
+        _playerInputActions.UI.Disable();
+        _playerInputActions.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        //Disable Player Action map
+        _playerInputActions.Player.Disable();
+        _paddle = null;
+        _paddlesRigidbody = null;
+        _paddleSpeedModifier = 0.0f;
+        _playerInputActions.Player.Disable();
+        _playerInputActions.UI.Enable();
+        _playerInputActions = null;
     }
 
     private void Start()
     {
-        GetHorizontalMovement();
+        Debug.Log("Going to find paddles");
+        if (playerNumber == 1)
+        {
+            _paddle = GameObject.Find("Scene/PongGame/paddle_blue");
+
+        }
+        else if (playerNumber == 2)
+        {
+            _paddle = GameObject.Find("Scene/PongGame/paddle_green");
+        }
+        if(_paddle == null)
+        {
+            Debug.Log("COULDNT FIND PADDLES");
+        }
+        else{
+            _paddlesRigidbody = _paddle.GetComponent<Rigidbody>();
+            var _paddleComponent = _paddle.GetComponent<Paddle>();
+            if (_paddleComponent != null)
+            {
+                _paddleSpeedModifier = _paddleComponent.GetPaddleBaseSpeed();
+            }
+            GetHorizontalMovement();
+        }
+
     }
 
     private void Update()
@@ -69,17 +101,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        //Enable Player Action map
-        _playerInputActions.Player.Enable();
-    }
 
-    private void OnDisable()
-    {
-        //Disable Player Action map
-        _playerInputActions.Player.Disable();
-    }
+
+
 
     //This is what player gets what
     private void GetHorizontalMovement()

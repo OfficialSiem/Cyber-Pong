@@ -25,6 +25,9 @@ public class ETouchPlayerMovement : MonoBehaviour
     private Vector2 _JoystickSize = new Vector2(300, 300);
 
     [SerializeField]
+    private GameObject _joyStickGameObject = null;
+
+    [SerializeField]
     private FloatingJoystick _leftJoystick;
 
     [SerializeField]
@@ -39,7 +42,10 @@ public class ETouchPlayerMovement : MonoBehaviour
     private float paddleSpeed = 5.0f;
 
     [SerializeField]
-    private Rigidbody paddlesRigidbody;
+    private GameObject _paddle = null;
+
+    [SerializeField]
+    private Rigidbody _paddlesRigidbody;
     #endregion
 
     [SerializeField]
@@ -54,6 +60,39 @@ public class ETouchPlayerMovement : MonoBehaviour
         _mainCamera = Camera.main;
         screenBoundryLeftSide = new Vector2(0, _mainCamera.pixelWidth * 0.35f);
         screenBoundryRightSide = new Vector2(_mainCamera.pixelWidth * 0.65f, _mainCamera.pixelWidth);
+    }
+
+    private void Start()
+    {
+        if (_playerNumber == 1)
+        {
+            _paddle = GameObject.Find("Scene/PongGame/paddle_blue");
+            if (_paddle == null)
+            {
+                Debug.Log("COULDNT FIND PADDLES");
+            }
+            else
+            {
+                _paddlesRigidbody = _paddle.GetComponent<Rigidbody>();
+            }
+            _joyStickGameObject = GameObject.Find("UI/Main Canvas/Player 1 Joystick");
+            _leftJoystick = _joyStickGameObject.GetComponent<FloatingJoystick>();
+        }
+        else if (_playerNumber == 2)
+        {
+            _paddle = GameObject.Find("Scene/PongGame/paddle_green");
+            if (_paddle == null)
+            {
+                Debug.Log("COULDNT FIND PADDLES");
+            }
+            else
+            {
+                _paddlesRigidbody = _paddle.GetComponent<Rigidbody>();
+            }
+            _joyStickGameObject = GameObject.Find("UI/Main Canvas/Player 2 Joystick");
+            _rightJoystick = _joyStickGameObject.GetComponent<FloatingJoystick>();
+        }
+
     }
 
     private void OnEnable()
@@ -245,6 +284,7 @@ public class ETouchPlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
+        _paddlesRigidbody = null;
         ETouch.Touch.onFingerDown -= HandleFingerDown;
         ETouch.Touch.onFingerUp -= HandleLostFinger;
         ETouch.Touch.onFingerMove -= HandleFingerMove;
@@ -262,8 +302,8 @@ public class ETouchPlayerMovement : MonoBehaviour
 
     void MovePaddle()
     {
-        Vector3 paddleVelocity = paddlesRigidbody.velocity;
+        Vector3 paddleVelocity = _paddlesRigidbody.velocity;
         paddleVelocity.x = _movementAmmount.x * paddleSpeed * paddleSpeed;
-        paddlesRigidbody.velocity = paddleVelocity;
+        _paddlesRigidbody.velocity = paddleVelocity;
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
+using static UnityEngine.ParticleSystem;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
 //Smallest number runs earliest!
@@ -76,11 +77,13 @@ public class ETouchGeneralInput : MonoBehaviour
             Debug.Log("Found Component" );
             if (_eTouchPlayerMovement._playerNumber == 1)
             {
+                _trail = GameObject.Find("Managers/InputManager/Trail Blue");
                 Debug.Log("Found Left Side");
                 _screenWidthBoundries = _eTouchPlayerMovement.screenBoundryLeftSide;
             }
             else if (_eTouchPlayerMovement._playerNumber == 2)
             {
+                _trail = GameObject.Find("Managers/InputManager/Trail Green");
                 Debug.Log("Found Right Side");
                 _screenWidthBoundries = _eTouchPlayerMovement.screenBoundryRightSide;
             }
@@ -94,18 +97,29 @@ public class ETouchGeneralInput : MonoBehaviour
 
     private void OnEnable()
     {
-        EnhancedTouchSupport.Enable();
-        ETouch.Touch.onFingerDown += HandleGeneralFingerDown;
-        ETouch.Touch.onFingerUp += HandleGeneralFingerLost;
+        _trail = GameObject.Find("Managers/InputManager/Trail Black");
+        if(_trail != null)
+        {
+            EnhancedTouchSupport.Enable();
+            ETouch.Touch.onFingerDown += HandleGeneralFingerDown;
+            ETouch.Touch.onFingerUp += HandleGeneralFingerLost;
+        }
+        else
+        {
+            Debug.Log("DIDNT FIND TRAIL");
+        }
 
     }
 
     private void OnDisable()
     {
-        ETouch.Touch.onFingerDown -= HandleGeneralFingerDown;
-        ETouch.Touch.onFingerUp -= HandleGeneralFingerLost;
-
-        EnhancedTouchSupport.Disable();
+        if (_trail != null)
+        {
+            _trail = null;
+            ETouch.Touch.onFingerDown -= HandleGeneralFingerDown;
+            ETouch.Touch.onFingerUp -= HandleGeneralFingerLost;
+            EnhancedTouchSupport.Disable();
+        }
     }
 
     private void HandleGeneralFingerDown(Finger touchedFinger)

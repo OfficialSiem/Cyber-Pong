@@ -3,8 +3,8 @@ using System.IO;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-
-public class TrackingEveryInput : Singleton<TrackingEveryInput>
+[DefaultExecutionOrder(-50)]
+public class TrackingEveryInput : SingletonPersistent<TrackingEveryInput>
 {
     [SerializeField]
     private string subfolderName = "EveryPressOrKeyPlayerMade";
