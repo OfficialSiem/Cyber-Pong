@@ -668,3 +668,36 @@ All Player Inputs Recieved:
 9/25/23   09:10 AM	Time (seconds): 26.29543	P1 Finger Up   Location (586.98, 788.05)
 9/25/23   09:11 AM	Time (seconds): 40.85449	P1 Finger Down Location: (34.08, 1734.79)
 9/25/23   09:11 AM	Time (seconds): 40.96174	P1 Finger Up   Location (34.08, 1734.79)
+ 
+ 
+9/25/23   10:22 AM	Time (seconds): 8.08548	Finger Down Location: (730.72, 224.97)
+9/25/23   10:22 AM	Time (seconds): 8.15789	Finger Up   Location (730.72, 224.97)
+9/25/23   10:22 AM	Time (seconds): 9.38023	Finger Down Location: (1234.02, 403.92)
+9/25/23   10:22 AM	Time (seconds): 9.46433	Finger Up   Location (1234.02, 403.92)
+9/25/23   10:22 AM	Time (seconds): 10.17548	Finger Down Location: (1140.82, 120.58)
+9/25/23   10:22 AM	Time (seconds): 10.23150	Finger Up   Location (1140.82, 120.58)
+ 
+9/25/23   10:22 AM	Time (seconds): 11.22075	P1 Finger Down Location: (197.59, 597.79)
+9/25/23   10:22 AM	Time (seconds): 12.08107	P1 Finger Up   Location (-137.94, 128.04)
+9/25/23   10:22 AM	Time (seconds): 12.53623	P2 Finger Down Location: (1547.18, 787.92)
+9/25/23   10:22 AM	Time (seconds): 13.39915	P2 Finger Up   Location (2054.21, 858.76)
+9/25/23   10:22 AM	Time (seconds): 13.76837	P2 Finger Down Location: (1681.40, 750.64)
+9/25/23   10:22 AM	Time (seconds): 14.05717	P2 Finger Up   Location (1942.37, 191.42)
+9/25/23   10:22 AM	Time (seconds): 14.60424	P1 Finger Down Location: (309.44, 415.11)
+9/25/23   10:22 AM	Time (seconds): 15.16883	P1 Finger Up   Location (190.14, 530.68)
+9/25/23   10:22 AM	Time (seconds): 16.70736	P1 Finger Down Location: (37.28, 1697.59)
+9/25/23   10:22 AM	Time (seconds): 16.81424	P1 Finger Up   Location (37.28, 1697.59)
+ 
+ 
+ 
+9/25/23   10:24 AM	Time (seconds): 3.47106	Finger Down Location: (928.31, 251.07)
+9/25/23   10:24 AM	Time (seconds): 3.48125	Finger Up   Location (928.31, 251.07)
+9/25/23   10:24 AM	Time (seconds): 3.94754	Finger Down Location: (1330.95, 459.84)
+9/25/23   10:24 AM	Time (seconds): 4.04229	Finger Up   Location (1330.95, 459.84)
+9/25/23   10:24 AM	Time (seconds): 4.58627	Finger Down Location: (1125.90, 105.67)
+9/25/23   10:24 AM	Time (seconds): 4.65538	Finger Up   Location (1125.90, 105.67)
+ 
+9/25/23   10:24 AM	Time (seconds): 5.56275	P1 Finger Down Location: (137.94, 549.32)
+9/25/23   10:24 AM	Time (seconds): 6.57387	P1 Finger Up   Location (-216.23, 146.68)
+9/25/23   10:24 AM	Time (seconds): 7.27645	P1 Finger Down Location: (22.37, 1693.86)
+9/25/23   10:24 AM	Time (seconds): 7.36640	P1 Finger Up   Location (22.37, 1693.86)
