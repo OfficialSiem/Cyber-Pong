@@ -701,3 +701,229 @@ All Player Inputs Recieved:
 9/25/23   10:24 AM	Time (seconds): 6.57387	P1 Finger Up   Location (-216.23, 146.68)
 9/25/23   10:24 AM	Time (seconds): 7.27645	P1 Finger Down Location: (22.37, 1693.86)
 9/25/23   10:24 AM	Time (seconds): 7.36640	P1 Finger Up   Location (22.37, 1693.86)
+ 
+9/25/23   10:50 AM	Time (seconds): 4.08682	Finger Down Location: (756.82, 251.07)
+9/25/23   10:50 AM	Time (seconds): 4.15601	Finger Up   Location (756.82, 251.07)
+9/25/23   10:50 AM	Time (seconds): 4.68552	Finger Down Location: (1252.66, 306.99)
+9/25/23   10:50 AM	Time (seconds): 4.75700	Finger Up   Location (1252.66, 306.99)
+9/25/23   10:50 AM	Time (seconds): 5.24038	Finger Down Location: (1077.44, 98.21)
+9/25/23   10:50 AM	Time (seconds): 5.31359	Finger Up   Location (1077.44, 98.21)
+ 
+9/25/23   10:50 AM	Time (seconds): 6.02694	P1 Finger Down Location: (342.99, 601.51)
+9/25/23   10:50 AM	Time (seconds): 6.73526	P1 Finger Up   Location (357.90, 974.33)
+9/25/23   10:50 AM	Time (seconds): 7.13417	P2 Finger Down Location: (1722.41, 735.73)
+9/25/23   10:50 AM	Time (seconds): 7.76051	P2 Finger Up   Location (1819.34, 866.21)
+9/25/23   10:50 AM	Time (seconds): 8.39701	P1 Finger Down Location: (18.64, 1727.42)
+9/25/23   10:50 AM	Time (seconds): 8.46054	P1 Finger Up   Location (18.64, 1731.15)
+ 
+9/25/23   10:52 AM	Time (seconds): 4.91249	P1 Finger Down Location: (257.24, 515.77)
+9/25/23   10:52 AM	Time (seconds): 5.54581	P1 Finger Up   Location (141.67, 530.68)
+9/25/23   10:52 AM	Time (seconds): 5.92134	P2 Finger Down Location: (1569.55, 597.79)
+9/25/23   10:52 AM	Time (seconds): 7.23311	P2 Finger Up   Location (1916.27, 601.51)
+9/25/23   10:52 AM	Time (seconds): 7.86379	P1 Finger Down Location: (402.64, 444.93)
+9/25/23   10:52 AM	Time (seconds): 12.19906	P1 Finger Up   Location (357.90, 418.84)
+9/25/23   10:52 AM	Time (seconds): 12.72992	P2 Finger Down Location: (1606.84, 553.05)
+9/25/23   10:52 AM	Time (seconds): 16.41183	P2 Finger Up   Location (1700.04, 538.14)
+9/25/23   10:52 AM	Time (seconds): 17.19945	P1 Finger Down Location: (253.51, 459.84)
+9/25/23   10:52 AM	Time (seconds): 19.94553	P1 Finger Up   Location (253.51, 448.66)
+9/25/23   10:52 AM	Time (seconds): 20.93380	P1 Finger Down Location: (26.10, 1705.05)
+9/25/23   10:52 AM	Time (seconds): 21.02468	P1 Finger Up   Location (26.10, 1705.05)
+ 
+9/25/23   10:52 AM	Time (seconds): 4.23211	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 4.63526	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 4.82553	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 5.22541	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 5.51273	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 5.74571	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 7.00029	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 7.10176	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 7.38698	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 7.92955	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 7.96847	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 8.37756	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 8.38969	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 8.92600	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 8.94838	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 9.40024	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 9.42475	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 9.87590	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 9.88535	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 10.23529	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 10.27816	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 10.80403	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 10.81151	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 11.09559	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 11.11016	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 12.17419	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 12.57655	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 12.80791	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 13.14776	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 13.49458	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 13.78594	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 14.09438	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 14.38699	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 14.44057	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 14.61614	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 14.72140	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 15.09188	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 15.54041	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 15.87029	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 16.11890	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 16.52864	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 17.04799	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 17.09870	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 17.69594	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 18.42632	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 18.46227	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 18.49720	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 18.72577	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 18.84142	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 19.13314	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 19.50997	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 19.51921	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 19.83477	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 19.84967	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 20.38236	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 20.41292	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 20.84883	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 21.23038	Key Pressed: Keyboard A
+9/25/23   10:52 AM	Time (seconds): 21.54292	Key Pressed: Keyboard S
+9/25/23   10:52 AM	Time (seconds): 22.02844	Key Pressed: Keyboard L
+9/25/23   10:52 AM	Time (seconds): 22.27490	Key Pressed: Keyboard K
+9/25/23   10:52 AM	Time (seconds): 22.62379	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 23.13451	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 23.15168	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 23.55079	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 23.55128	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 23.91869	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 24.16685	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 24.83994	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 25.27302	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 25.88358	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 26.42689	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 27.32132	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 28.47973	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 28.99062	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 30.51621	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 31.12833	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 31.49862	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 31.84681	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 32.44938	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 33.65430	Key Pressed: Keyboard J
+9/25/23   10:53 AM	Time (seconds): 34.11498	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 34.52557	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 35.04855	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 35.57787	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 35.67101	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 36.13861	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 36.49592	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 36.88069	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 37.48172	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 37.49149	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 37.86929	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 37.96285	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 38.47780	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 39.03875	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 39.36767	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 39.66273	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 40.18060	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 40.47303	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 41.00945	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 41.27689	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 41.68170	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 42.03703	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 42.54314	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 43.05561	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 43.28147	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 43.51946	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 43.77308	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 44.15697	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 44.44246	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 45.04081	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 45.20813	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 45.45266	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 46.08044	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 46.49653	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 46.92076	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 46.97345	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 47.05356	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 47.41321	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 47.79576	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 48.19379	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 48.73414	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 48.89190	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 49.01335	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 49.46494	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 49.86493	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 49.96245	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 50.03403	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 50.26884	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 50.73688	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 51.15767	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 51.36272	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 51.71922	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 52.34641	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 52.40413	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 52.70650	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 53.47200	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 53.57388	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 53.99295	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 54.11870	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 54.63186	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 54.80192	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 55.28737	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 55.61334	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 55.66558	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 56.09097	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 56.28150	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 56.53563	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 56.58634	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 56.68349	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 56.89776	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 57.32076	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 57.50354	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 57.89280	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 58.26318	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 58.61306	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 59.09076	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 59.58997	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 59.92557	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 60.03143	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 60.36948	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 60.63709	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 61.02522	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 61.50787	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 62.20401	Key Pressed: Keyboard S
+9/25/23   10:53 AM	Time (seconds): 62.41065	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 62.99254	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 63.02560	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 63.52781	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 63.68620	Key Pressed: Keyboard A
+9/25/23   10:53 AM	Time (seconds): 64.28429	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 64.55385	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 65.65144	Key Pressed: Keyboard L
+9/25/23   10:53 AM	Time (seconds): 65.84633	Key Pressed: Keyboard K
+9/25/23   10:53 AM	Time (seconds): 66.58891	Key Pressed: Keyboard L
+ 
+9/25/23   10:57 AM	Time (seconds): 3.66890	Finger Down Location: (883.57, 251.07)
+9/25/23   10:57 AM	Time (seconds): 3.73422	Finger Up   Location (883.57, 251.07)
+9/25/23   10:57 AM	Time (seconds): 5.04509	Finger Down Location: (1204.19, 541.86)
+9/25/23   10:57 AM	Time (seconds): 5.13006	Finger Up   Location (1204.19, 541.86)
+9/25/23   10:57 AM	Time (seconds): 6.25853	Finger Down Location: (1696.31, 549.32)
+9/25/23   10:57 AM	Time (seconds): 6.32537	Finger Up   Location (1696.31, 549.32)
+9/25/23   10:57 AM	Time (seconds): 6.40851	Finger Down Location: (1696.31, 549.32)
+9/25/23   10:57 AM	Time (seconds): 6.49171	Finger Up   Location (1696.31, 549.32)
+9/25/23   10:57 AM	Time (seconds): 6.75808	Finger Down Location: (1703.77, 556.78)
+9/25/23   10:57 AM	Time (seconds): 6.84616	Finger Up   Location (1703.77, 556.78)
+9/25/23   10:57 AM	Time (seconds): 7.13215	Finger Down Location: (1703.77, 556.78)
+9/25/23   10:57 AM	Time (seconds): 7.23639	Finger Up   Location (1703.77, 556.78)
+9/25/23   10:57 AM	Time (seconds): 7.74407	Finger Down Location: (1442.80, 124.31)
+9/25/23   10:57 AM	Time (seconds): 7.80009	Finger Up   Location (1442.80, 124.31)
+ 
+9/25/23   10:57 AM	Time (seconds): 10.36982	P1 Finger Down Location: (249.79, 567.96)
+9/25/23   10:57 AM	Time (seconds): 11.04735	P1 Finger Up   Location (462.29, 471.03)
+9/25/23   10:57 AM	Time (seconds): 12.04981	Key Pressed: Keyboard J
+9/25/23   10:57 AM	Time (seconds): 12.12640	Key Pressed: Keyboard K
+9/25/23   10:57 AM	Time (seconds): 12.17002	Key Pressed: Keyboard L
+9/25/23   10:57 AM	Time (seconds): 13.59169	P1 Finger Down Location: (22.37, 1705.05)
+9/25/23   10:57 AM	Time (seconds): 13.67834	P1 Finger Up   Location (22.37, 1705.05)

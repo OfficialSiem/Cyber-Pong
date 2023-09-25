@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testing-MainMenu.unity
+    path: Assets/Scenes For Build/Testing-MainMenu.unity
     guid: 9322b498dc370464ca98b6a9391b8a59
   - enabled: 1
-    path: Assets/Scenes/Testing-PongMatch.unity
+    path: Assets/Scenes For Build/Testing-PongMatch.unity
     guid: fcbabeeb51c85d842a2320ded459a7f0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2225ce5ee0ca7564790a7c04ad5a6e97,

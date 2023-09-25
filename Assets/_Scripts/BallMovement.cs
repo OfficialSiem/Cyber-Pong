@@ -34,8 +34,8 @@ public class BallMovement : MonoBehaviour
 
     private void Start()
     {
-        //GiveBallRandomStartingSpeed();
-        GiveBallASetStartingSpeed();
+        GiveBallRandomStartingSpeed();
+        //GiveBallASetStartingSpeed();
     }
 
     private void GiveBallRandomStartingSpeed()
